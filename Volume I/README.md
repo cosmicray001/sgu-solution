@@ -18,3 +18,14 @@ Given the lengths of six edges, to calculate the volume of the tetrahedron, usua
 
 Here I use the second one which can be derived with vector operations.
 
+### #163 Wise King
+
+A wise king who cannot count over three...
+
+### #164 Airlines
+
+Assume we divide the edges into two groups arbitrarily. We color (or `buy` in the problem) the first group with color A, and the second group with color B. Assume `NeighborB(a)` to be the neighbors of `a` connected by B-edges. `NeighborA(a)` is similarly defined.
+
+If two vertices cannot reach each other in less than 3 steps via A-edges, the `neighborA(a)+{a}` must connect `neighborA(b)+{b}` by B-edges. So `neighborA(a)` is connected with `neighborA(b)` via B-edges directly, and a, b must be so too (consider both the situation where `(a,b)` is A or `(a,b)` is B).
+
+So if group A doesn't meet the requirements, choose group B instead.
