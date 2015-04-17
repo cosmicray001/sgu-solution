@@ -29,3 +29,14 @@ Assume we divide the edges into two groups arbitrarily. We color (or `buy` in th
 If two vertices cannot reach each other in less than 3 steps via A-edges, the `neighborA(a)+{a}` must connect `neighborA(b)+{b}` by B-edges. So `neighborA(a)` is connected with `neighborA(b)` via B-edges directly, and a, b must be so too (consider both the situation where `(a,b)` is A or `(a,b)` is B).
 
 So if group A doesn't meet the requirements, choose group B instead.
+
+### #165 Basketball
+
+Normalize heights of players to |h| <= 50 mm. Consider the following cases:
+
+1. `|x| <= 50`, `|y| <= 50`, then `|x+y| <= 100`;
+2. `-50 <= x <= 0`, `0 <= y <= 50`, then `|x+y| <= 50`;
+3. Two players in Case 2 can be regarded as one person.
+
+Therefore, we only need make sure that the absolutions of sums of every continuous parts are smaller than 50.
+
