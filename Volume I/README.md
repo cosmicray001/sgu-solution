@@ -40,3 +40,26 @@ Normalize heights of players to |h| <= 50 mm. Consider the following cases:
 
 Therefore, we only need make sure that the absolutions of sums of every continuous parts are smaller than 50.
 
+### #166 Editor
+
+Simple string processing problem. But pay attention to the pointer processes which may occur errors easily.
+
+### #167 I-country
+
+`f[i][j1][j2][dl][dr][k]`: the maximum oils could be get when occupying `k` squares in the first `i` rows and columns `j1` to `j2`. `dl` and `dr` mean the direction of the i-th row. `dl == 0` when the left side in (i+1)-th row could expand towards left or right; `dl == 1` when the left side in (i+1)-th row could expand towards only right. `dr == 0` when the right side of the next row could expand towards both left and right, while `dr == 1` when the right side of the next row could expand only towards left.
+
+`f[][][][][][]` occupies totally 15*15*15*2*2*15^2*4 = 12150000 bytes = 11.6 MiB.
+
+There are four possible situations:
+```
+(dl, dr) =     (0,0)       (0,1)      (1,0)        (1,1)
+
+               ****         ****       ****       ********
+             ********     ****           ****        ***
+next line
+(dl, dr) =     (x,x)       (x,1)      (1,x)        (1,1)
+```
+
+We can use `f[i][j1][j2][dl][dr][k]` to update the next row.
+
+Record the path when updating the array `f`. As it's too memory-consuming to store `j1, j2, dl, dr` at the same time, we can use bit-compression to reduce the memory usage. Notice all the variables are smaller than 16, which means they can be represented by 4-bit integers. So we can use a 16-bit integer to represent these four integers: `(j1<<12) + (j2<<8) + (dl<<4) + dr`.
