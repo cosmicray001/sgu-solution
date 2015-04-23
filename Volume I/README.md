@@ -63,3 +63,14 @@ next line
 We can use `f[i][j1][j2][dl][dr][k]` to update the next row.
 
 Record the path when updating the array `f`. As it's too memory-consuming to store `j1, j2, dl, dr` at the same time, we can use bit-compression to reduce the memory usage. Notice all the variables are smaller than 16, which means they can be represented by 4-bit integers. So we can use a 16-bit integer to represent these four integers: `(j1<<12) + (j2<<8) + (dl<<4) + dr`.
+
+### #168 Matrix
+
+Draw several examples, it's easy to find that the right-down side of `(x,y)` is a square, and the right-up side of `(x,y)` is a triangle-like shape. The minimal values of these two parts can be calculated in `O(N^2)` time separately with the following equations:
+
+- `min_right_side[i][j] = min{ a[i][k], k >= j }`
+- `min_right_up_corner[i][j] = min{ min_right_side[i][j], min_right_up_corner[i-1][j+1] }`
+- `min_right_down_square[i][j] = min{ min_right_side[i][j],
+   min_right_down_square[i+1][j] }`
+
+The answer is `b[i][j] = min { min_right_up_corner[i][j], min_right_down_square[i+1][j]`
