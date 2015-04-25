@@ -74,3 +74,41 @@ Draw several examples, it's easy to find that the right-down side of `(x,y)` is 
    min_right_down_square[i+1][j] }`
 
 The answer is `b[i][j] = min { min_right_up_corner[i][j], min_right_down_square[i+1][j]`
+
+### #169 Numbers
+
+We can list the equations from the description of the problem:
+```
+   n = (x[n-1]*x[n-2]*...*x[1]*x[0]) * t1
+ n+1 = (x[n-1]*x[n-2]*...*x[1]*(x[0]+1)) * t2
+```
+
+Minus `n+1` and `n`:
+```
+   1 = (x[n-1]*...*x[0]) * (t2-t1) + (x[n-1]*..*x[2]*x[1]) * t2
+     = (x[n-1]*...*x[1]) * (x[0]*(t2-t1) + t2)
+```
+
+ When `t2 = 0`, t1 has to be equal to -1 which is impossible, so
+ ```
+  x[n-1] = x[n-2] = ... = x[2] = x[1] = x[0]*(t2-t1) + t2 = 1
+```
+
+The equations become
+```
+   n = x[0] * t1
+ n+1 = (x[0]+1) * t2
+   1 = x[0]*(t2-t1) + t2
+```
+
+The solutions are limited:
+```
+ x[0] = 1 ==> t1 = n, t2 = (n+1)/2
+      = 2 ==> t1 = n/2, t2 = (n+1)/3 ==> check whether (k+2)%3==0
+      = 3 ==> t1 = n/3, t2 = (n+1)/4 ==> last two digits of (n+1) is 14 ==> impossible
+      = 4 ==> t1 = n/4 ==> impossible
+      = 5 ==> t1 = n/5, t2 = (n+1)/6 ==> check whether (k+5)%3==0
+      = 6 ==> t1 = n/6, t2 = (n+1)/7 ==> last digit of (n+1) is 7, 111111%7==0 ==> check whether (k-1)%6==0
+      = 7 ==> t1 = n/7, t2 = (n+1)/8 ==> last three digits of (n+1) is 118 ==> impossible
+      = 8 ==> t1 = n/8 ==> impossible
+```
