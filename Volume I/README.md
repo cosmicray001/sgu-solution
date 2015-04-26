@@ -128,3 +128,9 @@ The "change" is like moving operation. Every time we need to move a psi+ or psi-
 Hint: Some students will not be invited to the olympiad and their weights will not be summarized.
 
 The students with heavier weights choose the zones first. They will take part in the zone where `P > Q` and `P - Q` is minimal. The students who cannot find such zones can attend any zones (they make no contribution).
+
+### #172 eXam
+
+Use two colors to paint the vertices to make sure that each pair of adjacent nodes don't have the same color.
+
+Easily solve it with Depth-First-Search. Notice: the graph may own several connected components.
