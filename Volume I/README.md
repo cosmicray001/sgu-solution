@@ -112,3 +112,19 @@ The solutions are limited:
       = 7 ==> t1 = n/7, t2 = (n+1)/8 ==> last three digits of (n+1) is 118 ==> impossible
       = 8 ==> t1 = n/8 ==> impossible
 ```
+
+### #170 Particles
+
+Here is an example:
+```
+++--++++   ===>   -++-++++
+           ===>   --++++++
+```
+
+The "change" is like moving operation. Every time we need to move a psi+ or psi- to the correct position. It's obvious that the i-th psi+ in the first string should be moved to the i-th psi+'s position in the second.
+
+### #171 Sarov zones
+
+Hint: Some students will not be invited to the olympiad and their weights will not be summarized.
+
+The students with heavier weights choose the zones first. They will take part in the zone where `P > Q` and `P - Q` is minimal. The students who cannot find such zones can attend any zones (they make no contribution).
