@@ -134,3 +134,54 @@ The students with heavier weights choose the zones first. They will take part in
 Use two colors to paint the vertices to make sure that each pair of adjacent nodes don't have the same color.
 
 Easily solve it with Depth-First-Search. Notice: the graph may own several connected components.
+
+### #173 Coins
+
+The transformation X contains two steps:
+- Cyclic left shift
+- Turn over (totally several times) k-th coin if i-th coin and A[i] are both 1 (i = 1.. k-1)
+
+The problem also provides us L conditions. Suppose the coins are ordinarily `U = [u1, u2, ..., uk]`, and finally become `V = [v1, v2, ..., vk]`. Without loss of generality, here we assume `k = 4`. The shift operation can be represented as a matrix
+```
+    [0 0 0 1]
+S = |1 0 0 0|
+    |0 1 0 0|
+    [0 0 1 0]
+```
+
+The vector `US` represents U after shifting one bit left. Remember: **each addition as well as multiplication is followed by modulo 2**.
+
+The second step in the transformation can be represented as a matrix too
+```
+    [1 0 0 a0]
+A = |0 1 0 a1|
+    |0 0 1 a2|
+    [0 0 0  1]
+```
+
+Therefore, we have the equation `USA = V`. Then use Partitioned Matrix to extract `X = [a0 a1 a2]`. Partition U as `U = [u1 u2 ... | uk]`, V as `V = [v1 v2 ... | vk]`, S and A as follows
+```
+    [0 0 0 | 1]
+    |1 0 0 | 0|
+S = |0 1 0 | 0|
+    |------+--|  
+    [0 0 1 | 0]
+
+    [1 0 0 | a0]
+    |0 1 0 | a1|
+A = |0 0 1 | a2|
+    |------+---|
+    [0 0 0 |  1]
+```
+
+Symbolize the equation as
+`(Ua Ub) (S1 S2; S3 0) (I X; 0 1) = (Va Vb)`
+
+Simplify it as
+`Ua*(S1*X + S2) + (Ub*S3*X) = Vb`
+
+It means that `[u2 u3 ... uk]X = vk - u1`
+
+We know L equations like that, so we can use Gaussian elimination to solve X.
+
+Now if we already know V, U can be obtained by `U = V*A^(-1)*S^(-1)`. It can be seen that `A^(-1) = A` and `S^(-1) = S^T`, so `U = V*A*S^T`. In this way, the initial coins can be solved backwards. However, as the Di can be as large as 10^6, we should use [2k-ary method](http://en.wikipedia.org/wiki/Exponentiation_by_squaring#2k-ary_method) (Brauer, 1939) to calculate `V*(A*S^T)^Di`.
