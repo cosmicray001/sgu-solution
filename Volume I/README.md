@@ -191,3 +191,9 @@ Now if we already know V, U can be obtained by `U = V*A^(-1)*S^(-1)`. It can be 
 Designing a good Hash function is not a easy thing. Just use `std::map` to store the point and its root (in its Union Set). Define `std::map<Point, Point> mpoint`. The first point means the hash key, while the second point means the root of the first point in its Union Set.
 
 Each time, we check whether the two ends of the walls own the same root (namely whether they belong to the same Union Set). Then insert them into the same set if they don't have the same root.
+
+### #175 Encoding
+
+Assume the initial position is `q`, `left <= 1` and `right <= n`. Two steps:
+- Reverse the string, thus `q <= left + right - q`
+- Find the new `left` or `right` after the reverse.
