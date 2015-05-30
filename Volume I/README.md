@@ -185,3 +185,9 @@ It means that `[u2 u3 ... uk]X = vk - u1`
 We know L equations like that, so we can use Gaussian elimination to solve X.
 
 Now if we already know V, U can be obtained by `U = V*A^(-1)*S^(-1)`. It can be seen that `A^(-1) = A` and `S^(-1) = S^T`, so `U = V*A*S^T`. In this way, the initial coins can be solved backwards. However, as the Di can be as large as 10^6, we should use [2k-ary method](http://en.wikipedia.org/wiki/Exponentiation_by_squaring#2k-ary_method) (Brauer, 1939) to calculate `V*(A*S^T)^Di`.
+
+### #174 Walls
+
+Designing a good Hash function is not a easy thing. Just use `std::map` to store the point and its root (in its Union Set). Define `std::map<Point, Point> mpoint`. The first point means the hash key, while the second point means the root of the first point in its Union Set.
+
+Each time, we check whether the two ends of the walls own the same root (namely whether they belong to the same Union Set). Then insert them into the same set if they don't have the same root.
