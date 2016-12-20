@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=212 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="212.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>212. Data Transmission </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard<BR>output: standard</DIV><BR><BR><BR>
+<DIV align=left>Recently one known microprocessor productioner has developed the 
+new type of microprocessors that can be used in difficult mathematical 
+calculations. The processor contains N so called <EM>nodes</EM> that are 
+connected by M <EM>channels</EM>. Data organized in packets, pass from 
+<EM>source node</EM> to <EM>target node</EM> by channels and are processed by 
+the intermediate nodes. <BR><BR>Each node has its <EM>level</EM> that determines 
+the type of work this node does. The source node has level 1 while the target 
+node has level L. For data to be correctly processed each packet of it must pass 
+in order all nodes with levels from 1 to L — that is, first it must be processed 
+by the source node, after that by some node of level 2, so on, and finally by 
+the target node. <BR><BR>Nodes can process as much data as they are asked to, 
+however channels can only transmit the limited amount of data in a unit of time. 
+For synchronization reasons, any data can only be transmitted from a node with 
+level i to some node with level i+1 and cannot be transmitted between nodes 
+which levels differ by more than one or from a node of higher level to a node of 
+lower level. Nodes are so fast that they can process data packet immediately, so 
+as soon as it reaches the node it is ready to be transmitted to the node of the 
+next level. <BR><BR>No data should stall in any node and no node can produce its 
+own data, so each unit of time the number of packets coming to any node except 
+source and target, must be equal to the number of packets leaving this node. 
+<BR><BR>The scheme of data transmission that satisfies the conditions provided 
+is called the <EM>data flow</EM>. Data flow is called <EM>blocking</EM> if there 
+is no way to increase the value of the data flow just increasing the amount of 
+data passing by some channels (however, there may be the way to increase it, 
+<EM>decreasing</EM> the amount of data for some channels and increasing for 
+other ones). <BR><BR>Your task is to find some blocking data flow for the 
+microprocessor given its scheme. Note, that you need not find the 
+<EM>maximal</EM> possible data flow, just any blocking one. <BR></DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left><BR>The first line of the input file contains three integer 
+numbers — N, M and L (2 &#8804; N &#8804; 1,500, 1 &#8804; M &#8804; 300,000, 2 &#8804; L &#8804; N). Let nodes be 
+numbered from 1 to N. The second line contains N integer numbers, i-th of them 
+is the level l<SUB>i</SUB> of the i-th node (1 &#8804; l<SUB>i</SUB> &#8804; L). Only one 
+node has level 1, that is the source node, and only one node has level L — that 
+is the target node. <BR><BR>Next M lines describe channels, each lines contains 
+three integer numbers a, b and c — nodes connected by this channel and its 
+capacity in packets per unit of time (1 &#8804; a, b &#8804; N, l<SUB>b</SUB> = 
+l<SUB>a</SUB> + 1, 1 &#8804; c &#8804; 10<SUP>6</SUP>). <BR><BR>Two nodes can be connected 
+by at most one channel. <BR></DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left><BR>Output the description of the data flow found. Output file 
+must contain M lines, they must correspond to channels and contain the amount of 
+data transmitted by the channel in a unit of time. Channels must be listed in 
+the order they are specified in the input file. <BR></DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>6 7 4 <BR>1 2 3 4 3 2 <BR>1 2 3 <BR>2 3 3 <BR>3 4 4 <BR>1 6 4 
+<BR>6 3 2 <BR>5 4 3 <BR>6 5 4 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>3 <BR>3 <BR>4 <BR>4 <BR>1 <BR>3 <BR>3 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=212">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=212">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Stankevich </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>Petrozavodsk Summer Trainings 2003 </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>2003-08-30 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-14 16:07:33</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

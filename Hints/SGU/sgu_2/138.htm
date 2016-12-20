@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=138 -->
+<HTML><HEAD><TITLE>138. Games of Chess</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META http-equiv=Expires content=Дата>
+<META http-equiv=Cache-Control content=no-cache>
+<META http-equiv=pragma content=no-cache>
+<META 
+content="ACM, programming contest, programming, contest, informatics, ioi, saratov, ICPC, программирование, информатика, алгоритм, саратов, контест" 
+name=keywords>
+<META 
+content="That site consists of some amount of programming problems. Online Contester system check your solution right now. You can participate in programming contests. Train your programming skills." 
+name=description><LINK href="style.css" type=text/css rel=stylesheet>
+<STYLE type=text/css>TD {
+	FONT-SIZE: 9pt
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY>
+<TABLE width="95%">
+  <TBODY>
+  <TR>
+    <TD>
+      <H3><B>
+      <P align=center>138. Games of Chess </P></H3></B>
+      <P align=center>Time Limit: 0.5 sec, Memory Limit: 1 MB </P>
+      <P align=justify></P>
+      <P align=justify><B>N</B> friends gathered in order to play chess, 
+      according to the following rules. In the first game, two of the <B>N</B> 
+      friends will play. In the second game, the winner of the first game will 
+      play against another friend (maybe even the same friend who lost the first 
+      game). In the third game, the winner of the second game will play against 
+      someone else and so on.. No game will end as a draw (tie). Given the 
+      number of games each of the <B>N</B> friends played, find a schedule for 
+      the games, so that the above rules are obeyed. </P>
+      <P align=justify></P><B>
+      <P align=justify>Input</P></B>
+      <P align=justify>The first line contains the number of friends <B>N</B> 
+      (<B>2&lt;=N&lt;=100</B>). The second line contains <B>N</B> integers, 
+      separated by blanks, representing the number of games each friend played. 
+      The first number represents the number of games played by the first 
+      friend, the second number represents the number of games played by the 
+      second friend and so on.. </P>
+      <P align=justify></P><B>
+      <P align=justify>Output</P></B>
+      <P align=justify>The first line should contain the number of games played 
+      by all the friends (it will be an integer between <B>1</B> and <B>10 
+      000</B>, for every test case). Let's suppose this number is <B>G</B>. 
+      Then, <B>G</B> lines follow, each of them containing two integers, 
+      describing the games. The first line contains the numbers of the two 
+      friends who played the first game. The friend printed first is considered 
+      to be the winner. Each of the next <B>G-1</B> lines contain the integers 
+      <B>a</B> and <B>b</B>, where <B>a&lt;&gt;b</B> and <B>a</B> or <B>b</B> is 
+      the winner of the previous game. The friend printed first on the line is 
+      considered to be the winner of the game. <BR>It is guaranteed that for 
+      every test case there will be at least one possible scheduling of the 
+      games. </P>
+      <P align=justify></P>
+      <P align=justify>Sample Input</P><FONT face="Courier New"><PRE>4
+2 4 1 5
+</PRE>
+      <P align=justify></P></FONT>
+      <P align=justify>Sample Output</P><FONT face="Courier New"><PRE>6
+4 3
+4 1
+2 4
+2 1
+4 2
+2 4
+</PRE></FONT></TD></TR>
+  <TR>
+    <TD>
+      <HR>
+
+      <TABLE align=left>
+        <TBODY>
+        <TR>
+          <TD>Author</TD>
+          <TD>: Mugurel Ionut Andreica</TD></TR>
+        <TR>
+          <TD>Resource</TD>
+          <TD>: SSU::Online Contester Fall Contest #2</TD></TR>
+        <TR>
+          <TD>Date</TD>
+          <TD>: Fall 
+2002</TD></TR></TD></TR></TBODY></TABLE></TR></TBODY></TABLE></BODY></HTML>

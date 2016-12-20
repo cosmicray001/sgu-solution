@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=155 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="155.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>155. Cartesian Tree </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard input<BR>output: standard 
+output</DIV><BR><BR><BR>
+<DIV align=left>Let us consider a special type of binary search trees, called 
+cartesian trees. Recall that a binary searchtree is a rooted ordered binary 
+tree, such that for its every node x the following condition is satisfied: each 
+node in its left subtree has the key less than the key of x, and each node in 
+its right subtree has the key greater than the key of x. <BR>That is, if we 
+denote the left subtree of the node x by L(x), its right subtree by R(x) and its 
+key by kx, for each node x we will have <BR>&nbsp;&nbsp;* if y in L(x) then ky 
+&lt; kx <BR>&nbsp;&nbsp;* if z in R(x) then kz &gt; kx <BR>The binary search 
+tree is called cartesian if its every node x in addition to the main key kx also 
+has an auxiliary key that we will denote by ax, and for these keys the heap 
+condition is satisfied, that is <BR>&nbsp;&nbsp;* if y is the parent of x then 
+ay &lt; ax <BR>Thus a cartesian tree is a binary rooted ordered tree, such that 
+each of its nodes has a pair of two keys (k, a) and three conditions described 
+are satisfied. <BR>Given a set of pairs, construct a cartesian tree out of them, 
+or detect that it is not possible. </DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left>The first line of the input file contains an integer number N - 
+the number of pairs you should build cartesian tree out of (1 &lt;= N &lt;= 
+50000). The following N lines contain two integer numbers each - given pairs 
+(ki, ai). For each pair |ki|, |ai| &lt;= 30000. All main keys and all auxiliary 
+keys are different, i.e. ki &lt;&gt; kj and ai &lt;&gt; aj for each i &lt;&gt; 
+j. </DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left>On the first line of the output file print YES if it is possible 
+to build a cartesian tree out of given pairs or NO if it is not. If the answer 
+is positive, output the tree itself in the following N lines. Let the nodes be 
+numbered from 1 to N corresponding to pairs they contain as these pairs are 
+given in the input file. For each node output three numbers - its parent, its 
+left child and its right child. If the node has no parent or no corresponding 
+child, output 0 instead. <BR>If there are several possible trees, output any 
+one. </DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>7 <BR>5 4 <BR>2 2 <BR>3 9 <BR>0 5 <BR>1 3 <BR>6 6 <BR>4 11 
+</DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>YES <BR>2 3 6 <BR>0 5 1 <BR>1 0 7 <BR>5 0 0 <BR>2 4 0 <BR>1 0 0 
+<BR>3 0 0 </DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR><B>Note</B></DIV>
+<DIV align=left><BR>You can download pdf version of this task <A 
+href="http://acm.sgu.ru/materials/p155.pdf">here</A> </DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=155">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=155">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Stankevich </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>ACM ICPC 2002-2003 NEERC, Northern Subregion </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>November, 2002 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-13 20:01:10</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

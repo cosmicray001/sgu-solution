@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=202 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="202.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>202. The Towers of Hanoi Revisited </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard<BR>output: standard</DIV><BR><BR><BR>
+<DIV align=left>You all must know the puzzle named ``The Towers of Hanoi''. The 
+puzzle has three pegs and N discs of different radii, initially all disks are 
+located on the first peg, ordered by their radii - the largest at the bottom, 
+the mallest at the top. In a turn you may take the topmost disc from any peg and 
+move it to another peg, the only rule says that you may not place the disc atop 
+any smaller disk. The problem is to move all disks to the last peg making the 
+smallest possible number of moves. <BR><BR>There is the legend that somewhere in 
+Tibet there is a monastery where monks tirelessly move disks from peg to peg 
+solving the puzzle for 64 discs. The legend says that when they finish, the end 
+of the world would come. <BR><BR>Since it is well known that to solve the puzzle 
+you need to make 2<SUP>N</SUP>-1 moves, a small calculation shows that the world 
+seems to be a quite safe place for a while. <BR><BR>However, recent 
+archeologists discoveries have shown that the things can be a bit worse. The 
+manuscript found in Tibet mountains says that the puzzle the monks are solving 
+has not 3 but M pegs. This is the problem, because when increasing the number of 
+pegs, the number of moves needed to move all discs from the first peg to the 
+last one following the rules described, decreases dramatically. 
+<BR><BR>Calculate how many moves one needs to move N discs from the first peg to 
+the last one when the puzzle has M pegs and provide the scenario for moving the 
+discs. <BR></DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left>Input file contains N and M (1 &#8804; N &#8804; 64, 4 &#8804; M &#8804; 65). <BR></DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left>On the first line output L - the number of moves needed to solve 
+the puzzle. Next L lines must contain the moves themselves. For each move print 
+the line of the form <BR>
+<CENTER><BR><TT>move &lt;disc-radius&gt; from &lt;source-peg&gt; to 
+&lt;target-peg&gt;</TT> <BR></CENTER><BR>if the disc is moved to the empty peg 
+or <BR>
+<CENTER><BR><TT>move &lt;disc-radius&gt; from &lt;source-peg&gt; to 
+&lt;target-peg&gt; atop &lt;target-top-disc-radius&gt;</TT> <BR></CENTER><BR>if 
+the disc is moved atop some other disc. <BR><BR>Disc radii are integer numbers 
+from 1 to N, pegs are numbered from 1 to M. <BR></DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>5 4 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>13 <BR>move 1 from 1 to 3 <BR>move 2 from 1 to 2 <BR>move 1 from 
+3 to 2 atop 2 <BR>move 3 from 1 to 4 <BR>move 4 from 1 to 3 <BR>move 3 from 4 to 
+3 atop 4 <BR>move 5 from 1 to 4 <BR>move 3 from 3 to 1 <BR>move 4 from 3 to 4 
+atop 5 <BR>move 3 from 1 to 4 atop 4 <BR>move 1 from 2 to 1 <BR>move 2 from 2 to 
+4 atop 3 <BR>move 1 from 1 to 4 atop 2 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=202">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=202">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Stankevich </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>Petrozavodsk Summer Trainings 2003 </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>2003-08-23 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-14 13:28:14</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=134 -->
+<HTML><HEAD><TITLE>134. Centroid</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META http-equiv=Expires content=Дата>
+<META http-equiv=Cache-Control content=no-cache>
+<META http-equiv=pragma content=no-cache>
+<META 
+content="ACM, programming contest, programming, contest, informatics, ioi, saratov, ICPC, программирование, информатика, алгоритм, саратов, контест" 
+name=keywords>
+<META 
+content="That site consists of some amount of programming problems. Online Contester system check your solution right now. You can participate in programming contests. Train your programming skills." 
+name=description><LINK href="style.css" type=text/css rel=stylesheet>
+<STYLE type=text/css>TD {
+	FONT-SIZE: 9pt
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY>
+<TABLE width="95%">
+  <TBODY>
+  <TR>
+    <TD>
+      <H3><B>
+      <P align=center>134. Centroid </P></H3></B>
+      <P align=center>Time Limit: 0.2 sec, Memory Limit: 1 MB </P>
+      <P align=justify></P>
+      <P align=justify>You are given an undirected connected graph, with 
+      <B>N</B> vertices and <B>N-1</B> edges (a tree). You must find the 
+      centroid(s) of the tree. <BR>In order to define the centroid, some integer 
+      value will be assosciated to every vertex. Let's consider the vertex 
+      <B>k</B>. If we remove the vertex <B>k</B> from the tree (along with its 
+      adjacent edges), the remaining graph will have only <B>N-1</B> vertices 
+      and may be composed of more than one connected components. Each of these 
+      components is (obviously) a tree. The value associated to vertex <B>k</B> 
+      is the largest number of vertices contained by some connected component in 
+      the remaining graph, after the removal of vertex <B>k</B>. All the 
+      vertices for which the associated value is minimum are considered 
+      centroids. </P>
+      <P align=justify></P><B>
+      <P align=justify>Input</P></B>
+      <P align=justify>The first line of the input contains the integer number 
+      <B>N</B> (<B>1&lt;=N&lt;=16 000</B>). The next <B>N-1</B> lines will 
+      contain two integers, <B>a</B> and <B>b</B>, separated by blanks, meaning 
+      that there exists an edge between vertex <B>a</B> and vertex <B>b</B>. 
+</P>
+      <P align=justify></P><B>
+      <P align=justify>Output</P></B>
+      <P align=justify>You should print two lines. The first line should contain 
+      the minimum value associated to the centroid(s) and the number of 
+      centroids. The second line should contain the list of vertices which are 
+      centroids, sorted in ascending order. </P>
+      <P align=justify></P>
+      <P align=justify>Sample Input</P><FONT face="Courier New"><PRE>7
+1 2
+2 3
+2 4
+1 5
+5 6
+6 7
+</PRE>
+      <P align=justify></P></FONT>
+      <P align=justify>Sample Output</P><FONT face="Courier New"><PRE>3 1
+1
+</PRE></FONT></TD></TR>
+  <TR>
+    <TD>
+      <HR>
+
+      <TABLE align=left>
+        <TBODY>
+        <TR>
+          <TD>Author</TD>
+          <TD>: Mugurel Ionut Andreica</TD></TR>
+        <TR>
+          <TD>Resource</TD>
+          <TD>: SSU::Online Contester Fall Contest #2</TD></TR>
+        <TR>
+          <TD>Date</TD>
+          <TD>: Fall 
+2002</TD></TR></TD></TR></TBODY></TABLE></TR></TBODY></TABLE></BODY></HTML>

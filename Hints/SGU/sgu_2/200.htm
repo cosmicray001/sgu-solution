@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=200 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="200.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>200. Cracking RSA </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard<BR>output: standard</DIV><BR><BR><BR>
+<DIV align=left>The following problem is somehow related to the final stage of 
+many famous integer factorization algorithms involved in some cryptoanalytical 
+problems, for example cracking well-known RSA public key system. <BR><BR>The 
+most powerful of such algorithms, so called quadratic sieve descendant 
+algorithms, utilize the fact that if n = pq where p and q are large unknown 
+primes needed to be found out, then if v<SUP>2</SUP>=w<SUP>2</SUP> (mod n), u &#8800; 
+v (mod n) and u &#8800; -v (mod n), then gcd(v + w, n) is a factor of n (either p or 
+q). <BR><BR>Not getting further in the details of these algorithms, let us 
+consider our problem. Given m integer numbers b<SUB>1</SUB>, b<SUB>2</SUB>, ..., 
+b<SUB>m</SUB> such that all their prime factors are from the set of first t 
+primes, the task is to find such a subset S of {1, 2, ..., m} that product of 
+b<SUB>i</SUB> for i from S is a perfect square i.e. equal to u<SUP>2</SUP> for 
+some integer u. Given such S we get one pair for testing (product of S elements 
+stands for v when w is known from other steps of algorithms which are of no 
+interest to us, testing performed is checking whether pair is nontrivial, i.e. u 
+&#8800; v (mod n) and u &#8800; -v (mod n)). Since we want to factor n with maximum possible 
+probability, we would like to get as many such sets as possible. So the 
+interesting problem could be to calculate the number of all such sets. This is 
+exactly your task. <BR></DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left><BR>The first line of the input file contains two integers t and 
+m (1 &#8804; t &#8804; 100, 1 &#8804; m &#8804; 100). The second line of the input file contains m 
+integer numbers b<SUB>i</SUB> such that all their prime factors are from t first 
+primes (for example, if t = 3 all their prime factors are from the set {2, 3, 
+5}). 1 &#8804; b<SUB>i</SUB> &#8804; 10<SUP>9</SUP> for all i. <BR></DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left><BR>Output the number of non-empty subsets of the given set 
+{b<SUB>i</SUB>}, the product of numbers from which is a perfect square 
+<BR><BR></DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left><BR>3 4 <BR>9 20 500 3 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left><BR>3 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=200">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=200">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Stankevich </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>Petrozavodsk Winter Trainings 2003 </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>2003-02-06 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-14 13:19:00</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

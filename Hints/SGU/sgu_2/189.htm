@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=189 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="189.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>189. Perl-like Substr </H4></DIV>
+<DIV align=center>time limit per test: 0.25 sec.<BR>memory limit per test: 1024 
+KB</DIV>
+<DIV align=center>input: standard input<BR>output: standard 
+output</DIV><BR><BR><BR>
+<DIV align=left>A small Russian offshore company H&amp;H decided to strike the 
+world community and develop their own analogue (faster and with lots of 
+features) of a well-known scripting language Perl. You are hired to participate 
+in this project and your task is very simple - to code the function substr. 
+<BR>Function substr writes and reads separate substrings: <BR>$value = 
+substr($string, $offset, $count); <BR>$value = substr($string, $offset); 
+<BR>substr($string, $offset, $count) = $newstring; <BR>substr($string, $offset) 
+= $newstring; <BR>$string (symbol $ in Perl marks a scalar variable, the strings 
+in Perl are scalar variables) contains the initial string. $offset defines the 
+beginning of the substring. Positive values of $offset are counted out from the 
+beginning of the string, negative - from the end. If the $offset equals to zero, 
+the substring begins from the first symbol of string. The third argument $count 
+defines the length of the substring. If $count is omitted, substr returns 
+everything to the end of the string. If $count is negative, substr leaves that 
+many characters off the end of the string. <BR>Function substr can be used not 
+only to get the substring from the string, but also to replace the substring 
+with the new string. In the last case the lengths of the old substring and the 
+new one can be different. <BR>You are given a simple Perl-like program (refer to 
+the input and output specifications) and your task is to output the result of 
+its execution. </DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left>The first line contains two natural numbers N (1&lt;=N&lt;=20) - 
+the number of initialization lines in the program and M (1&lt;=M&lt;=300) - the 
+number of remaining lines in the program. Next N lines (no one more than 10000 
+symbols) contain the string initialization in the following form: <BR>$name = 
+"value"; <BR>$name is the name of the string variable (always starts with symbol 
+$). The name of the variable consists of up to 20 (including symbol $) 
+alfa-numerical letters (and the $ in the beginning). The name of the variable is 
+followed by symbol "=", and then follows the value of the variable - a sequence 
+of alfa-numerical symbols and the punctuators (space, comma, dot, hyphen, 
+underline, colon, exclamation and question marks) enclosed in double quotes. The 
+length of the value is not more than 255 symbols. The name of the variable, 
+symbol "=", and the value can be delimited by one or more spaces. There is 
+always a semicolon at the end of the line. <BR>Each of the following M lines 
+contains the line of the program in one of the following 6 types: <BR>1. 
+print($name); Output the value of variable $name <BR>2. print(substr($name, $o[, 
+$c])); Output the substring from variable $name <BR>3. $name1 = $name2; Assign 
+the value of variable $name1 to the value of variable $name2 <BR>4. $name1 = 
+substr($name2, $o[, $c]); Assign the value of variable $name1 to the substring 
+from variable $name2 <BR>5. substr($name1, $o[, $c]) = $name2; Replace the 
+substring in $name1with the value of $name2 <BR>6. substr($name1, $o[, $c]) = 
+substr($name2, $o[, $c]); Replace the substring in $name1 with the substring 
+from $name2 <BR><BR>The square brackets indicate that the third argument in 
+substr can be omitted. There may be no spaces inside the names of the variables 
+and the names of functions, but there may be one or several spaces in all other 
+places. There is symbol ";" at the end of each line, the length of each line is 
+not more than 255 symbols. The values of the variables which weren't initialized 
+in the first N lines of the input file are considered as empty strings "". The 
+total number of different variables in the program is not more than 100. No 
+variable value will have the length of more than 1000 symbols in the course of 
+the program execution. <BR>The parameters $c and $o have been chosen so, that 
+the substr returns the "correct" substring, i.e. the beginning and the end of 
+the substring are within the initial string, and the beginning proceeds the end 
+(substring is not empty). <BR>You must assume that names of variables are case 
+sensitive. <BR></DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left>The output file must contain the result of the program execution 
+- one line for each print() operator. No additional symbols, spaces or line 
+brakes in the output file are permitted. </DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>2 9 <BR>$a = "0123456789"; <BR>$b = "abcdefghigklmn"; 
+<BR>print($a); <BR>print( substr($b, 1, 2) ); <BR>substr($b, 0, 1) = substr($a, 
+2, 7); <BR>$c = $b; <BR>print(substr($c,0)); <BR>print(substr($a, -2, -1)); 
+<BR>print(substr($a, -6, 2)); <BR>print(substr($a, -5)); <BR>print(substr($a, 1, 
+2)); </DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>0123456789 <BR>bc <BR>2345678bcdefghigklmn <BR>8 <BR>45 
+<BR>56789 <BR>12 </DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=189">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=189">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Ilya V. Elterman </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>ACM International Collegiate Programming Contest 2003-2004 
+      <BR>North-Eastern European Region, Southern Subregion </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>2003 October, 9 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-14 11:38:56</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

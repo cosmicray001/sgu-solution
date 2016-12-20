@@ -1,0 +1,1652 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://202.120.61.1/oibh/sgu/algorithm1xx.htm -->
+<HTML xmlns="http://www.w3.org/TR/REC-html40" xmlns:v = 
+"urn:schemas-microsoft-com:vml" xmlns:o = 
+"urn:schemas-microsoft-com:office:office"><HEAD><TITLE>算法分析</TITLE>
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 13px; BACKGROUND: #ffffff; FONT-FAMILY: "宋体"
+}
+A {
+	FONT-SIZE: 13px; FONT-FAMILY: "宋体"
+}
+TD {
+	FONT-SIZE: 13px; FONT-FAMILY: "宋体"
+}
+A {
+	TEXT-TRANSFORM: none; LINE-HEIGHT: 20px; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+P {
+	MARGIN-TOP: 0px; FONT-SIZE: 13px; MARGIN-BOTTOM: 0px; TEXT-INDENT: 26px; LINE-HEIGHT: 20px
+}
+A:visited {
+	LINE-HEIGHT: 20px; TEXT-DECORATION: none
+}
+</STYLE>
+
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.2900.3395" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: #f3f6f9" text=#000000 vLink=#0000ff link=#0000ff 
+bgColor=#ffffff>
+<SCRIPT>
+function Show(t_id)
+{
+	var targetDiv =eval("document.all.alg" + t_id);
+	if (targetDiv.style.display!='block')
+	{
+		targetDiv.style.display="block";
+	}
+	else
+	{targetDiv.style.display="none";}
+}
+</SCRIPT>
+
+<DIV align=center>
+<CENTER>
+<TABLE id=AutoNumber4 style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+cellSpacing=0 cellPadding=0 width=600 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=AutoNumber1 
+      style="WORD-SPACING: 1px; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #edf8e7" 
+      borderColor=#00aa00 cellSpacing=0 cellPadding=0 width=600 border=1>
+        <TBODY>
+        <TR align=middle>
+          <TD width=588 bgColor=#d7eec7 colSpan=3><A align="center">算法分析 (SGU 
+            100-199)</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR height=12>
+    <TD vAlign=bottom align=middle width="100%"></TD></TR>
+  <TR>
+    <TD width="100%">
+      <TABLE id=AutoNumber1 
+      style="WORD-SPACING: 1px; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #edf8e7" 
+      borderColor=#ffffff cellSpacing=0 width=600 border=1>
+        <TBODY>
+        <TR align=middle>
+          <TD width=40>100</TD>
+          <TD width=390>A+B</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：直接加</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>101</TD>
+          <TD width=390>Domino</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：欧拉路</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(101) name=101>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg101 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>可以将0-6这7种牌面看作节点，把骨牌看作是连接两节点的无向弧，这样就组成了一个无向图。只要在图中找到一条欧拉路即可。
+            <P 
+            style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px">欧拉路的构造方法：若图连同且度为奇数的节点不超过2个，则该图可以构造出欧拉路。先选一个度为奇数的节点（若没有就任选一个度为偶数的节点）。再以该节点为起点，用dfs遍历所有的弧（每条弧只遍历一次），遇到死胡同就回溯，在每次回溯时将所在弧按顺序记录下来。这组弧的排列就组成了一条欧拉路。</P></TD></TR></TD></TR>
+        <TR align=middle>
+          <TD width=40>102</TD>
+          <TD width=390>Coprimes</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(102) name=102>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg102 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>该题就是求n的欧拉函数值</P>
+            <P>若n=p1^e1*p2^e2*……*pm^em</P>
+            <P>φ(n)=n*(p1-1)*(p2-1)*……*(pm-1)/p1/p2/……/pm</P>
+            <P>=(p1^e1-p1^(e1-1))*(p2^e2-p2^(e2-1))*……*(pm^em-pm^(em-1))</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>103</TD>
+          <TD width=390>Traffic Lights</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(103) name=103>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg103 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>这题虽然与最短路的模型有一定的区别(弧的权时刻在变)，但是仍含有最优子结构，可以用Dijkstra法求解。关键是求出在时刻t之后多少秒内某路连通。</P>
+            <P>在某一时刻t，若顶点v1与v2异色，则计算v1与v2在时刻t后各自变色的时刻。如果时间不同那么较小者就是时刻t后v1与v2连通的时刻；如果相同，那么再往后算一次变色的时刻，若仍相同则v1与v2永远都不会再连通了，反之取较小值。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>104</TD>
+          <TD width=390>Little Shop of Flowers</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>105</TD>
+          <TD width=390>Div 3</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>106</TD>
+          <TD width=390>The Equation</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：解不定方程</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>107</TD>
+          <TD width=390>987654321 problem</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：直接输出结果</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(107) name=107>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg107 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>用数学方法或编程序可以算出n=9时有8个解，那么n=10时就有72个，n=11时有720个，以后n每增加1，解就乘以10。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>108</TD>
+          <TD width=390>Self-numbers II</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：递推</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>109</TD>
+          <TD width=390>Magic of David Copperfield II</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：构造</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(109) name=109>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg109 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>此题的构造方法有许多种，我介绍一下我使用的方法：</P>
+            <P>n=2时特殊处理。n&gt;2时，先走n步，然后以副对角线(右上到左下)为分界线将右下部分去掉，以后每次走奇数步并且去掉最靠右下的那一斜行，最后只剩第一个格。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>110</TD>
+          <TD width=390>Dungeon</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：模拟</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(110) name=110>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg110 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>硬算！ 
+            用向量表示方向，计算反射光线的方向是很容易的，只需解个一元二次方程就行了。其实大家都会考虑到精度问题，当数据很变态时，误差是不可以避免的。可我没有处理这个问题就AC了，可能是数据太弱的缘故。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>111</TD>
+          <TD width=390>Very simple problem</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：高精度计算</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(111) name=111>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg111 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>使用传统的笔算开方法既可。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>112</TD>
+          <TD width=390>a^b - b^a</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：高精度计算</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>113</TD>
+          <TD width=390>Nearly prime numbers</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>114</TD>
+          <TD width=390>Telecasting station</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：枚举</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(114) name=114>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg114 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>易证TV-station一定可以设在城市中，所以穷举城市就可以了。</P>
+            <P>这题的城市坐标为整数且上限才50000，用计数排序足以。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>115</TD>
+          <TD width=390>Calendar</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>116</TD>
+          <TD width=390>Index of super-prime</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>117</TD>
+          <TD width=390>Counting</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(117) name=117>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg117 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>方法1：硬算！ 注意：算A^M mod k时要用o(logM)的算法，不然会超时。</P>
+            <P>方法2：将K分解质因数，再把每个数分解质因数后，比较其是否拥有K的所有质因数而且次数大于等于相应质因数的次数。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>118</TD>
+          <TD width=390>Digital root</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(118) name=118>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg118 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>函数digitroot()有如下性质：digitroot(a+b)=digitroot(digitroot(a)+digitroot(b)) 
+            , digitroot(a*b)=digitroot(digitroot(a)*digitroot(b))</P>
+            <P>这样就可以动态规划了。</P>
+            <P>　</P>
+            <P></P>
+            <P>补充：</P>
+            <P>digitroot()拥有上述性质是因为：</P>
+            <P>digitroot(n)= n mod 9</P>
+            <P>等于0时值取9。</P>
+            <P>把各位拆一下，模9，易证。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>119</TD>
+          <TD width=390>Magic pairs</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(119) name=119>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg119 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>显然：若ax+by=0(mod n)则i(ax+by)+j(ax+by)=0(mod n)。我们已知A0X+B0Y=0(mod 
+            n)与nX+nY=0(mod n)，利用上述关系可以算出所有的解。 
+        不过，这题的特殊情况非常多，一定要把每一种情况考虑好。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>120</TD>
+          <TD width=390>Arhipelago</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：计算几何</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>121</TD>
+          <TD width=390>Bridges painting</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：欧拉路</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(121) name=121>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg121 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>将岛看作节点，桥看作弧，这样就组成了一个无向图。用构造欧拉路的方法把整个图分成尽量少的路(或环)，每条路(或环)都按0,1,0,1……的顺序染色。在一般情况下，若某个点的度&gt;1则必有一条路穿过该节点，所以问题解决了。反例只有一种，即图本身就是一个环且节点数为奇数，这样就无解了。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>122</TD>
+          <TD width=390>The book</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：构造</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(122) name=122>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg122 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>由于每个人都与半数以上的人是朋友，这样就可以用调整法找到一个哈密顿圈。</P>
+            <P>把人与人的关系看作一个无向图，易证图是连通的。用贪心法找到一条极长路，设其为a1,a2,……,ak。用容斥原理易证有ai(1&lt;i&lt;k)使a1与ak相连且ai+1与a1相连，再连a1-ai+1与ai-ak,使ai与ai+1断开，则这条路变成了一个环。由于图是连通的，从这个环的某处断开必能找到一个更长的极长路，就这样反复找下去，最后那个最大的环就是该图的哈密顿圈。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>123</TD>
+          <TD width=390>The sum</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：递推</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>124</TD>
+          <TD width=390>Broken line</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：计算几何</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>125</TD>
+          <TD width=390>Shtirlits</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：搜索剪枝</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>126</TD>
+          <TD width=390>Boxes</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：模拟</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(126) name=126>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg126 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P><FONT face=宋体 
+            size=2>对于任意堆球，设总球数为n，n除尽它的所有因子2，得到数m。m是n的奇质因数的积，或是1。m若能整除每堆个数的公约数，则总可合并成一堆。证明可以用逆推。</FONT></P>
+            <P>又可以证明<FONT face=宋体 
+            size=2>可合并成一堆</FONT>的数对，只需移动至多[log2(a+b)+1]次就可以达到目标。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>127</TD>
+          <TD width=390>Telephone directory</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学计算</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>128</TD>
+          <TD width=390>Snake</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：构造</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(128) name=128>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg128 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>由于相邻的线段相互垂直，所以对于在一列上的N个点，必须是1-2 3-4 
+            5-6.....(n-1)-n,同理每行的点也一样。接下来判断图是否连通，是否有线段自交就可以了。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>129</TD>
+          <TD width=390>Inheritance</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：计算几何</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>130</TD>
+          <TD width=390>Circle</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>131</TD>
+          <TD width=390>Hardwood floor</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(131) name=131>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg131 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>每一行最多有512种状态，对于任意一种状态，和填满后下一行的状态，先计算出填充的方法数，再进行动态规划。 
+            （填充时要求每一块砖至少覆盖上一行的一个格，这样才没有后效性）</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>132</TD>
+          <TD width=390>Another Chocolate Maniac</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(132) name=132>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg132 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>这题也是使用与131题类似的动态规划，不过由于是求最小值，情况就复杂多了。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>133</TD>
+          <TD width=390>Border</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：贪心</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>134</TD>
+          <TD width=390>Centroid</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：树的动态规划</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>135</TD>
+          <TD width=390>Drawing Lines</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>136</TD>
+          <TD width=390>Erasing Edges</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：解方程组</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>137</TD>
+          <TD width=390>Funny Strings</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：构造</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(137) name=137>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg137 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>该题构造方法如下：</P>
+            <P>设含有n个元素总和为m的'funny' String为S(n,m)。</P>
+            <P>我们不妨定义S(n,m)中只含m div n与m div n+1两种元素。</P>
+            <P>若n=2则S(n,m)={m div 2,m div 2+1}</P>
+            <P>若n&gt;2则：</P>
+            <P>&nbsp; 若m&gt;n则：S(n,m)的每个元素都是S(n,m mod n)中对应元素加m div n。</P>
+            <P>&nbsp; 若m&lt;n则：</P>
+            <P>&nbsp;&nbsp;&nbsp; 若n-m=1则：S(n,m)第一个元素为0，其余为1。</P>
+            <P>&nbsp;&nbsp;&nbsp; 
+            若n-m&gt;1则：S(n,m)可以用S(n-m,m)来构造。S(n,m)的第1个元素为0，S(n-m,m)中的第i个元素表示S(n,m)中第i个0后有几个1。</P>
+            <P>这个构造方法的正确性很容易证明。不过在最坏情况下，它的算法复杂度为o(n^2)，不能满足要求。比如求S(1000,1)，该算法会从S(999,1),S(998,1)一直求到S(2,1)。所以当S(n,m)中0的个数&gt;1的个数时，可以换用S(m,n-m)来构造，这样S(n,m)的第1个元素为0，S(n-m,m)中的第i个元素表示S(n,m)中第i个1之前有几个0。调整后的算法复杂度为o(n)</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>138</TD>
+          <TD width=390>Games of Chess</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：构造</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(138) name=138>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg138 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>设list[i][0]为第i场比赛的胜者，list[i][1]为第i场比赛的败者。</P>
+            <P>1.先将选手的编号依次(场次最多者最先，其余的按编号顺序)向list[i][0]里填，使他们只剩下一场比赛，直到list[i][0]填满为止，再把那些只剩下一场比赛的选手编号填入他们最后一场比赛的下一场比赛的败者中。比如样例就是这样填：</P>
+            <P>4 x</P>
+            <P>4 x</P>
+            <P>4 x</P>
+            <P>4 x</P>
+            <P>1 4</P>
+            <P>1 x</P>
+            <P>2.再将剩余的空间按顺序填满：</P>
+            <P>4 2</P>
+            <P>4 2</P>
+            <P>4 2</P>
+            <P>4 2</P>
+            <P>1 4</P>
+            <P>1 3</P>
+            <P>只要按照上述顺序填入就不会出错，因为每个人的场次再多也不会大于总场次的一半。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>139</TD>
+          <TD width=390>Help Needed!</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(139) name=139>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg139 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>先算出光标偏离原位置的布数a，再将偏离原位置的数字与其原位置中的数字交换(光标也看作为一个数字)，直到所有数字回到原位，记下交换次数b。如果a+b是偶数就无解，反之有解。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>140</TD>
+          <TD width=390>Integer Sequences</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>141</TD>
+          <TD width=390>Jumping Joe</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：解不定方程</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>142</TD>
+          <TD width=390>Keyword</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：统计</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>143</TD>
+          <TD width=390>Long Live the Queen</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：树的动态规划</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>144</TD>
+          <TD width=390>Meeting</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>145</TD>
+          <TD width=390>Strange People</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：分支限界搜索</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(145) name=145>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg145 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>此题用宽搜+分支定界即可。由于时间空间的限制比较苛刻，所以建议熟练掌握该算法后再做这题。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>146</TD>
+          <TD width=390>The Runner</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学计算</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(146) name=146>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg146 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>小心浮点溢出。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>147</TD>
+          <TD width=390>Black-white king</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：枚举</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(147) name=147>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg147 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>枚举Black-white king与另外两个king可能的相遇地点。不过棋盘实在是太大了，不可能全部枚举，要有选择的枚举。 
+            如果不考虑棋盘边界，Black king与While 
+            king可能经过的点组成了一个矩形（是一个斜放的矩形！）。首先要枚举这个矩形的边界(注意棋盘外的部分不要考虑)，其次要枚举那些在x轴、y轴方向平分两个king的线段（Black-white 
+            king与Black king或Black-white king与While 
+        king），而且这些线段一定要在那个矩形内。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>148</TD>
+          <TD width=390>B-Station</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：贪心</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(148) name=148>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg148 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>贪心的主要思路是枚举第一个花钱减压的水层，每次计算总的花费，这样算是o(n^2)的算法，难以接受。所以我们要做一些优化。</P>
+            <P>如果是从最后一层开开始枚举，我们会发现当枚举第i层时，凡是第i层下面的水层，只有可能由需要花钱减压变为不需要花钱减压，当枚举到第1层时这个变化最多有n次。所以只需找到发生这种变化的水层的次序就可以在o(n)的时间内完成贪心。这个次序可以用快速排序来生成，所以总的时间复杂度为o(nlogn)。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>149</TD>
+          <TD width=390>Computer Network</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：树的动态规划</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>150</TD>
+          <TD width=390>Mr. Beetle II</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：模拟</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>151</TD>
+          <TD width=390>Construct a triangle</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：计算几何</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(151) name=151>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg151 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>把b,c两点放在x轴上，使bc中点为坐标原点，再算出a点坐标。</P>
+            <P>注意：此题中三角形的面积可以为0。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>152</TD>
+          <TD width=390>Making round</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：构造</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(152) name=152>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg152 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>先把权重*100后取整，算出一个中间结果，这时所有数的总和一般会比100小，小多少就给多少个数加1就行了。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>153</TD>
+          <TD width=390>Playing with matches</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(153) name=153>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg153 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>虽然n很大，但是递推的数组是呈周期性变化的，所以只需递推出1个周期就行了。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>154</TD>
+          <TD width=390>Factorial</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学计算</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>155</TD>
+          <TD width=390>Cartesian Tree</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：构造</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(155) name=155>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg155 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>建树的基本原理就是按auxiliary key从小到大的顺序建一棵二叉排序树，可是节点实在是太多了，所以不能用插入法。</P>
+            <P>不妨定义某节点的子节点就是auxiliary key比它大且key最接近它的节点，显然这样的树就符合要求 
+            。所有节点的子节点用归并排序的扩展算法算出。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>156</TD>
+          <TD width=390>Strange Graph</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：欧拉回路</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(156) name=156>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg156 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>从题目中给的条件不难得出如下结论：</P>
+            <P>1.整个图可以看作由"线"和"团"组成的。</P>
+            <P>2."线"就是由n个节点顺次连成的路(n&gt;=1)，路的两端与"团"相连。</P>
+            <P>3."团"就是由n个节点两两相连组成的图(n&gt;=3),"团"中的每个节点有且仅有一条弧与"线"相连。</P>
+            <P>不妨把"线"与"团"均看作节点，"线"与"团"相连的弧看作弧，组成一个新的图。新图的欧拉回路即为原图的哈密顿回路。</P></TD></TR>
+        <TR style="COLOR: #c0c0c0" align=middle>
+          <TD width=40>157</TD>
+          <TD width=390>Patience</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 
+            style="COLOR: #c0c0c0; BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>158</TD>
+          <TD width=390>Commuter Train</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：枚举</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(158) name=158>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg158 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>可以证明：最优的状态一定至少有一个乘客正对着两个车门的正中央或者列车停在月台的边缘。所以枚举乘客与车门即可。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>159</TD>
+          <TD width=390>Self-Replicating Numbers</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：高精度计算</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>160</TD>
+          <TD width=390>Magic Multiplying Machine</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>161</TD>
+          <TD width=390>Intuitionistic Logic</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：搜索</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(161) name=158>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg161 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>这题非常非常非常麻烦。建议您在做之前做好充分的思想准备，并且要完全看懂题目。</P>
+            <P>注意题目中的条件：H的元素个数不超过100个；每个formula的变量取值的可能性的总和&lt;=10^6。这也就是说，在最环情况下我们只需要计算10^6个formula的值即可。但是10^6毕竟不是个小数目，再算上计算每个formula要花的时间一定会超时的，所以要做一些优化：</P>
+            <P>1.通过观察各种运算的特点，不难看出所有运算的结果肯定属于H。所以可以将集合数字化，再列一个表存上所有可能的计算的结果。这样集合的计算就大大的简化了。</P>
+            <P>2.由于每个formula要计算许多遍，所以每次并不需要完全重算一遍，只需计算变量更改的部分。这需要用一棵树来表示formula。（我建这棵树就用了100行代码，55555555……）</P>
+            <P>我是加了以上两个优化就AC了，如果您想再优化，可以尝试如下方法：</P>
+            <P>3.寻找formula中重复的部分，只算一次。</P>
+            <P>4.枚举变量取值的排列时，要按照一个最优的顺序，比如：最后一个变量(取值改变次数最多)，最好是在formula中出现次数比较少的，或是在树中深度较浅的。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>162</TD>
+          <TD width=390>Pyramids</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：计算几何</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>163</TD>
+          <TD width=390>Wise King</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学计算</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>164</TD>
+          <TD width=390>Airlines</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：贪心</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(164) name=164>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg164 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>把图分成两半，至少有一部分是符合要求的。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>165</TD>
+          <TD width=390>Basketball</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：构造</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(165) name=165>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg165 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>按高度从小到大排序，然后从两端不断提取，取出后依次作为结果。在保证排列满足要求的条件下，每次能取左端的就取左端的，不行就取右端的，要是取右端的扔不行就无解。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>166</TD>
+          <TD width=390>Editor</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：模拟</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(166) name=166>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg166 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>数据很弱，不要想太复杂了，用链表或Delphi的高级字符串处理函数都可以</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>167</TD>
+          <TD width=390>I-country</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(167) name=167>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg167 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>很麻烦的动态规划。可以考虑把所求的图形分为3部分：</P>
+            <P>1.上端小底部大的部分。(顶部) </P>
+            <P>如：</P>
+            <P>&nbsp; *</P>
+            <P>&nbsp; **</P>
+            <P>2.自上至下向左偏移(或向右偏移)的部分。(中部)</P>
+            <P>如：</P>
+            <P>&nbsp;&nbsp; **</P>
+            <P>&nbsp; **</P>
+            <P>或</P>
+            <P>&nbsp; **</P>
+            <P>&nbsp;&nbsp; **</P>
+            <P>3.上端大小底部小的部分。(底部)</P>
+            <P>如：</P>
+            <P>&nbsp; ***</P>
+            <P>&nbsp;&nbsp; *</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>168</TD>
+          <TD width=390>Matrix</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>169</TD>
+          <TD width=390>Numbers</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>170</TD>
+          <TD width=390>Particles</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：贪心</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>171</TD>
+          <TD width=390>Sarov zones</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：贪心</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>172</TD>
+          <TD width=390>eXam</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：贪心</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>173</TD>
+          <TD width=390>Coins</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学方法</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(173) name=173>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg173 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>首先解关于向量A的布尔方程组。然后将coins的排列还原，由于Di很大所以不要硬算，应当做一些优化。</P>
+            <P>transformation x for given row C with length K 可以写成如下形式：</P>
+            <P>c'[i]=c[i+1]; (0&lt;i&lt;k)</P>
+            <P>c'[k]=(c[2]&amp;a[1]^c[3]&amp;a[2]^……^c[k]&amp;a[k-1])^c[1]</P>
+            <P>构造二位数组b，使：</P>
+            <P>b1[i][i+1]=1 (0&lt;i&lt;k)</P>
+            <P>b1[k][1]=1，b1[k][j]=a[j-1] (1&lt;j&lt;=k)</P>
+            <P>则：</P>
+            <P>c'[i]=c[1]&amp;b1[i][1]^c[2]&amp;b1[i][2]^……^c[k]&amp;b1[i][k]</P>
+            <P>所以b1可以表示1次transformation的公式。</P>
+            <P>用如下方法求出2^n次transformation的公式：</P>
+            <P>例如n=1:</P>
+            <P>b2[i][j]=b1[i][1]&amp;b1[1][j]^b1[i][2]&amp;b1[2][j]^……^b1[i][k]&amp;b1[k][j]</P>
+            <P>求出b1,b2,b4,b8,……之后在将di转成二进制形式，若di含2^i就用b2^i做一次迭代。</P>
+            <P>这样只需logDi次迭代即可完成Di次transformation。这种算法的时间复杂度为o(l^3+mk^3logDi)。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>174</TD>
+          <TD width=390>Walls</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：并查集</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>175</TD>
+          <TD width=390>Encoding</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：分治</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>176</TD>
+          <TD width=390>Flow construction</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：网络流</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(176) name=176>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg176 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>此题是容量有上下界的网络最小流问题的一个特例。解法如下：</P>
+            <P>1.构造附加网。</P>
+            <P>&nbsp;&nbsp;&nbsp; a.建立附加源s'和附加汇t'。</P>
+            <P>&nbsp;&nbsp;&nbsp; 
+            b.对于每个需要满负荷流动的弧e=uv，添加附加弧e1=ut',e2=s'v，使c(e1)=c(e2)=c(e)，再将e删除。</P>
+            <P>&nbsp;&nbsp;&nbsp; c.优化附加弧，合并及删除多余的弧。</P>
+            <P>2.求最小流。</P>
+            <P>&nbsp;&nbsp;&nbsp; a.以s'为主源，t'为主汇，用标号法(或是你觉得好的方法)求出最大流f1。</P>
+            <P>&nbsp;&nbsp;&nbsp; b.以s'为主源，节点n为主汇，在a的基础上用标号法求出当前最大流f2。</P>
+            <P>&nbsp;&nbsp;&nbsp; c.以节点1为主源，t'为主汇，在b的基础上用标号法求出当前最大流f3。</P>
+            <P>&nbsp;&nbsp;&nbsp; 
+            d.此时如果所有附加弧的流量均为最大值，则该图有最小流，最小流为f3-f2。反之该图无可行流。</P>
+            <P>&nbsp;&nbsp;&nbsp; 
+            e.将1.b中删除的弧还原并将其当前流量设为最大值，再删除所有附加图。此时图中的流就是该图最小流时的流分布。</P>
+            <P>注意：主源及主汇的容量均为正无穷。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>177</TD>
+          <TD width=390>Square</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：统计</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(177) name=177>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg177 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>这道题的方法有许多，一个比较容易实现的算法就是分割矩形的方法。若方阵的的大小是n*n，那么把整个方阵分为4等份，其中总的白格数就是4个小方阵的白格数的总和。这样不断分割矩形的算下去直到方阵被其所在区域最上面的矩形完全覆盖。由于在最坏情况下每个矩形被分为8n份，所以该算法的复杂度为o(mn)。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>178</TD>
+          <TD width=390>Chain</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：枚举</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(178) name=178>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg178 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>若链子被毁坏a节，则其总长度最大为(a+1)*2^(a+1)-1。不难看出当n为10^16时的结果也不大，所以枚举结果就行了。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>179</TD>
+          <TD width=390>Brackets light</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：构造</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(179) name=179>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg179 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>寻找最右边的可以变为")"的"("，把它改成")"后，再将它后面的括号排成((..(())))...))))的形式。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>180</TD>
+          <TD width=390>Inversions</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：归并排序</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>181</TD>
+          <TD width=390>X-Sequence</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：枚举循环节</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>182</TD>
+          <TD width=390>Open the brackets</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：表达式求值</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(182) name=182>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg182 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>将所有的2^10种情况的表达式的值都算出来，再构造一个表达式作为结果输出。</P>
+            <P>比如(a,b,c)=(F,T,F)是!a&amp;b&amp;!c为真的充要条件，所以可以把结果为真的变量取值写成这种形式再用"||"连起来作为等价式。</P>
+            <P>例：只有当(a,b,c)=(T,F,T) 或 (T,T,F) 或 (T,T,T)时a&amp;(b||c)的值才为真。</P>
+            <P>&nbsp;&nbsp;&nbsp; 
+            所以a&amp;(b||c)的等价式可以为a&amp;!b&amp;c||a&amp;b&amp;!c||a&amp;b&amp;c。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>183</TD>
+          <TD width=390>Painting the balls</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(183) name=183>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg183 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>可以用f[i,j]表示最后两个黑球分别是i,j所需花费的最小值,那么f[i,j]=cost[i]+min{f[j,k]}(i和k之间有不超过m个球)min{f[i,k]}可以用另一个数组初始化出来,因此每次求f[i,j]的时间是O(1)的.又因为i,j之间的距离不能超过m,所以，总共有m*n个有意义的f[i,j],这样时间复杂度是O(mn),而与f[i,j]相关的量最多有m个。因此用滚动数组优化空间的话空间复杂度就是O(m^2)。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>184</TD>
+          <TD width=390>Patties</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：直接计算</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>185</TD>
+          <TD width=390>Two shortest</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：网络流</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(185) name=185>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg185 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>先做一遍最短路,设d[i]是起点到i的最短距离,然后构造网络。如果d[i]+d(i,j)=d[j] 
+            (设d(i,j)是i与j之间边的长度)那么从i到j就有一个容量为1的弧,然后以起点为源点终点为汇点做一个流量为2的流就可以了。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>186</TD>
+          <TD width=390>The chain</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：贪心</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(186) name=186>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg186 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>排序之后从最小的开始操作就可以了。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>187</TD>
+          <TD width=390>Twist and whirl -- want to cheat</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：模拟</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(187) name=187>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg187 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>n很大不要纯做,而是对每个"段"进行处理.所谓"段",就是一个从a..b的区间,最开始只有一个"段"1..n, 
+            不难看出每次翻转最多增加两个"段",这样总"段"数就不超过2m+1了,因此总的复杂度就是O(m^2)。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>188</TD>
+          <TD width=390>Factory guard</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学计算</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>189</TD>
+          <TD width=390>Perl-like Substr</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：模拟</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(189) name=189>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg189 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>字符串处理要小心,尤其注意空格可以加的位置。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>190</TD>
+          <TD width=390>Dominoes</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：最大匹配</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(190) name=190>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg190 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>染成白格和黑格,然后求一下"白","黑"两个集合的最大匹配即可。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>191</TD>
+          <TD width=390>Exhibition</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：模拟</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(191) name=191>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg191 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>一步一步推即可。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>192</TD>
+          <TD width=390>RGB</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：离散化</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(192) name=192>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg192 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>先把交点统计出来,不超过c(n,2)个,再加上所有线段的端点,称这些为"事件点",对这些事件点进行排序,然后按照顺序扫描一下,扫描的时候动态地维护线段间的位置关系,然后处理遇到的"事件点",如果遇到的是端点,就用O(n)的时间进行线段的插入和删除操作,如果遇到的是交点,就用O(1)的时间交换这两个线段的位置。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>193</TD>
+          <TD width=390>Chinese Girls' Amusement</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学问题</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(193) name=193>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg193 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>当n为奇数是(n-1)/2,当n为偶数n/2为奇数时,n/2-2,当n为偶数n/2野为偶数时,n/2-1。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>194</TD>
+          <TD width=390>Reactor Cooling</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：网络流</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(194) name=194>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg194 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>构造网络,设s为源点,t为会点,增加弧s-&gt;a,如果所有连入a的流的下限大于所有由a连出的流的下限,容量为这两个值之差,增加弧a-&gt;t如果所有由a连出的流的下限大于所有连入a的流的下限,容量为这两个值之差,增加弧a,b如果a和b有流量,容量为上限与下限之差.做一遍最大流,然后看所有s连出的弧是否都满载,如果是这样的话就对应一组解,a到b的实际流量就是a到b流量的下界加上a到b在网络中的流量。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>195</TD>
+          <TD width=390>New Year Bonus Grant</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：动态规划</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(195) name=195>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg195 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>注意,Hates拿不到奖哦。</P></TD></TR>
+        <TR align=middle>
+          <TD width=40>196</TD>
+          <TD width=390>Matrix Multiplication</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：数学计算</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>197</TD>
+          <TD width=390>Nice Patterns Strike Back</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：矩阵乘法</TD>
+                <TD width="25%"><A style="CURSOR: hand; COLOR: #008000" 
+                  onclick=Show(197) name=197>算法详解</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg197 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3>
+            <P>先用二进制表示一行的所有状态,然后构造矩阵A[i,j]=1如果状态i与状态j可以相邻,做一下A^(n-1)然后对A中所有元素求和即可。</P></TD></TR>
+        <TR style="COLOR: #c0c0c0" align=middle>
+          <TD width=40>198</TD>
+          <TD width=390>Get Out!</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 
+            style="COLOR: #c0c0c0; BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR>
+        <TR align=middle>
+          <TD width=40>199</TD>
+          <TD width=390>Beautiful People</TD>
+          <TD width=300>
+            <TABLE id=AutoNumber3 style="BORDER-COLLAPSE: collapse" 
+            borderColor=#111111 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width="75%">算法：最长不降序列</TD>
+                <TD width="25%"><A><FONT 
+              color=#c0c0c0>算法详解</FONT></A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR id=alg100 style="DISPLAY: none; BACKGROUND-COLOR: #f3f6f9">
+          <TD width=600 colSpan=3></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<P>　</P></CENTER></DIV>
+<SCRIPT>
+var h=location.hash;
+h=h.substr(1,h.length-1);
+if (h!="")
+{
+	var ttd =eval("document.all.alg" + h);
+	ttd.style.display="block";
+}
+</SCRIPT>
+</BODY></HTML>

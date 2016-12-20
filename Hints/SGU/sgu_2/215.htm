@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=215 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="215.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>215. PL/Cool </H4></DIV>
+<DIV align=center>time limit per test: 4 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard<BR>output: standard</DIV><BR><BR><BR>
+<DIV align=left>The new IMB compiler "Unvisual Age for PL/Cool" is planned for 
+release next month. Your task in this problem is to write the interpreter for 
+the PL/Cool language so that the compiler programmers could test their product. 
+<BR><BR>Program on PL/Cool can contain expressions. Each expression can contain 
+integer constants and variables. The following operations are allowed: + (add), 
+- (substract), * (multiply), / (divide), % (modulo), and ^ (raise). ll 
+operations have their usual meaning and priority (^) &gt; (*) = (/) = (%) &gt; 
+(+) = (-), all operations except ^ are evaluated from left to right, ^ is 
+evaluated from right to left. Parenthesis can be used to change the order of 
+evaluation, as usually. Unary minus and plus are allowed, their priority in this 
+case is the highest. <BR><BR>Divide operation acts like integer division: first 
+both operands are replaced with their absolute values, next integer division is 
+performed, remainder is dropped, and finally the sign of the quotient is set 
+equal to the sign of the true quotient of the operands. Taking modulo is 
+perfomed the same way, except that the quotient is dropped and remainder is 
+kept. For example, (80+4*75)/(56-2^2^3) = -1. <BR><BR>Program may contain 
+variables. Variable name starts with a letter, which may be followed by letters 
+and digits. Variable names are case insensitive. Maximal name length is 10 
+characters. <BR><BR>PL/Cool has two operators: "print" and "define". Program is 
+the sequence of the operators, one on a line. <BR><BR>Operator "print" has the 
+following syntax: <BR>
+<CENTER><BR>print &lt;expression&gt; <BR></CENTER><BR><BR>Here 
+&lt;expression&gt; is any expression that may contain variables and integer 
+constants. Operator "print" prints the value of the expression. <BR><BR>Operator 
+"define" has the following syntax: <BR>
+<CENTER><BR>define &lt;operand1&gt; &lt;operand2&gt; <BR></CENTER><BR><BR>Here 
+&lt;operand1&gt; and &lt;operand2&gt; are either variables or non-negative 
+integer constants. After execution of the "define" operator, all occurences of 
+the &lt;operand1&gt; are replaced with the &lt;operand2&gt;. Define operator can 
+be used even to change the value of the integer constants, for example after 
+<BR>
+<CENTER><BR>define 2 4 <BR></CENTER><BR>the value of 2+2 is 8. <BR><BR>Note that 
+substitution is performed recursively, until some undefined constant is met, for 
+example the following sequence of operators prints 8 and 10: <BR>
+<CENTER><BR>define 2 4 <BR>define 3 2 <BR>print 3+3 <BR>define 4 5 <BR>print 3+3 
+<BR></CENTER><BR><BR>An attempt to redefine some variable or constant is 
+ignored. An attempt to make a definition that leads to circular dependence is 
+also ignored. For example, the following sequence prints 4 and 4, because the 
+last two definitions are ignored. <BR>
+<CENTER><BR>define 2 4 <BR>define 3 2 <BR>define 2 5 <BR>print 3 <BR>define 4 2 
+<BR>print 3 <BR></CENTER><BR><BR>If some identifier is used in the expression 
+that is not yet defined to be substituted by some integer constant, its value is 
+set to zero. For example, the following operator prints 3: <BR>
+<CENTER><BR>print x + 3 <BR></CENTER><BR></DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left><BR>Input file contains the program on PL/Cool. All numbers in 
+the expressions, including numbers that occur during expression evaluation, do 
+not exceed 10<SUP>9</SUP> by their absolute value. The total number of "define" 
+operators does not exceed 30000, the total number of "print" operators does not 
+exceed 2000, the length of each line does not exceed 200 characters. <BR><BR>In 
+case of division denominator is never zero, zero is not raised to zero power and 
+power exponent is always non-negative. <BR></DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left><BR>Output file must contain the output of all print operators 
+in the order they are executed, one on a line. <BR></DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>print (80+4*75)/(56-2^ 2^ 3) <BR>print 30/-1 <BR>print 31%-5 
+<BR>print 0^3 <BR>print 2+2 <BR>define 2 3 <BR>print 2+2 <BR>define 3 x 
+<BR>print 2+2 <BR>define x 2 <BR>print 2+2 <BR>define 2 5 <BR>print 2+2 
+<BR>define x 7 <BR>print 2+2 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>-1 <BR>-30 <BR>-1 <BR>0 <BR>4 <BR>6 <BR>0 <BR>0 <BR>0 <BR>14 
+<BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=215">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=215">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Stankevich </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>Petrozavodsk Summer Trainings 2003 </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>2003-08-30 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-14 17:05:51</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=141 -->
+<HTML><HEAD><TITLE>141. Jumping Joe</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META http-equiv=Expires content=Дата>
+<META http-equiv=Cache-Control content=no-cache>
+<META http-equiv=pragma content=no-cache>
+<META 
+content="ACM, programming contest, programming, contest, informatics, ioi, saratov, ICPC, программирование, информатика, алгоритм, саратов, контест" 
+name=keywords>
+<META 
+content="That site consists of some amount of programming problems. Online Contester system check your solution right now. You can participate in programming contests. Train your programming skills." 
+name=description><LINK href="style.css" type=text/css rel=stylesheet>
+<STYLE type=text/css>TD {
+	FONT-SIZE: 9pt
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY>
+<TABLE width="95%">
+  <TBODY>
+  <TR>
+    <TD>
+      <H3><B>
+      <P align=center>141. Jumping Joe </P></H3></B>
+      <P align=center>Time Limit: 0.1 sec, Memory Limit: 1 MB </P>
+      <P align=justify></P>
+      <P align=justify>Joe is a frog who likes to jump a lot. In fact, that's 
+      all he does: he jumps forwards and backwards on the integer axis (a 
+      straight line on which all the integer numbers, both positive and negative 
+      are marked). At first, Joe sits next to the point marked with <B>0</B>. 
+      From here, he can jump in the positive or the negative direction a 
+      distance equal to either <B>x<SUB>1</SUB></B> or <B>x<SUB>2</SUB></B>. 
+      From the point where he arrived, he can jump again a distance equal to 
+      <B>x<SUB>1</SUB></B> or <B>x<SUB>2</SUB></B>, in the positive or the 
+      negative direction and so on.. Joe wants to arrive next to the point 
+      marked with the number <B>P</B>, after exactly <B>K</B> jumps. You have to 
+      decide whether such a thing is possible. </P>
+      <P align=justify></P><B>
+      <P align=justify>Input</P></B>
+      <P align=justify>The input will contain four integers: 
+      <B>x<SUB>1</SUB></B>, <B>x<SUB>2</SUB></B> (<B>0 &lt; x<SUB>1</SUB> , 
+      x<SUB>2</SUB> &lt; 40 000</B>), <B>P</B> (<B>-40 000 &lt; P&nbsp; &lt; 40 
+      000</B>) and <B>K </B>(<B>0 &lt;= K &lt; 2 000 000 000</B>), separated by 
+      blanks. </P>
+      <P align=justify></P><B>
+      <P align=justify>Output</P></B>
+      <P align=justify>The first line of output will contain the word 
+      <B>"YES"</B>, in case Joe can reach the point marked with <B>P</B> after 
+      exactly <B>K</B> jumps, or <B>"NO"</B>, otherwise. In case the answer is 
+      <B>"YES"</B>, the next line should contain four integers, separated by 
+      blanks: <B>P<SUB>1</SUB> </B>, <B>N<SUB>1</SUB> </B>, <B>P<SUB>2</SUB></B> 
+      and <B>N<SUB>2</SUB></B>. <B>P<SUB>1</SUB></B> is the number of times Joe 
+      jumped in the positive direction a distance equal to <B>x<SUB>1</SUB></B>. 
+      <B>N<SUB>1</SUB></B> is the number of times Joe jumped in the negative 
+      direction a distance equal to <B>x<SUB>1</SUB></B>. <B>P<SUB>2</SUB></B> 
+      is the number of times Joe jumped in the positive direction a distance 
+      equal to <B>x<SUB>2</SUB></B>. <B>N<SUB>2</SUB></B> is the number of times 
+      Joe jumped in the negative direction a distance equal to 
+      <B>x<SUB>2</SUB></B>. In other words, you should find four non-negative 
+      integers, so that: 
+      <P><B>P<SUB>1</SUB>*x<SUB>1</SUB> - N<SUB>1</SUB>*x<SUB>1</SUB> + 
+      P<SUB>2</SUB>*x<SUB>2</SUB> - N<SUB>2</SUB>*x<SUB>2</SUB> = P</B> 
+      <BR><B>P<SUB>1</SUB> + N<SUB>1</SUB> + P<SUB>2</SUB> + N<SUB>2</SUB> = 
+      K</B> 
+      <P>In case there are more quadruples 
+      <B>(P<SUB>1</SUB>,N<SUB>1</SUB>,P<SUB>2</SUB>,N<SUB>2</SUB>)</B> which are 
+      solutions for the problem, you may print any of them. </P>
+      <P align=justify></P>
+      <P align=justify>Sample Input</P><FONT face="Courier New"><PRE>2 3 -1 12
+</PRE>
+      <P align=justify></P></FONT>
+      <P align=justify>Sample Output</P><FONT face="Courier New"><PRE>YES
+1 0 5 6
+</PRE></FONT></TD></TR>
+  <TR>
+    <TD>
+      <HR>
+
+      <TABLE align=left>
+        <TBODY>
+        <TR>
+          <TD>Author</TD>
+          <TD>: Mugurel Ionut Andreica</TD></TR>
+        <TR>
+          <TD>Resource</TD>
+          <TD>: SSU::Online Contester Fall Contest #2</TD></TR>
+        <TR>
+          <TD>Date</TD>
+          <TD>: Fall 
+2002</TD></TR></TD></TR></TBODY></TABLE></TR></TBODY></TABLE></BODY></HTML>

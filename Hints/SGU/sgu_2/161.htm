@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=161 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="161.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>161. Intuitionistic Logic </H4></DIV>
+<DIV align=center>time limit per test: 15 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard input<BR>output: standard 
+output</DIV><BR><BR><BR>
+<DIV align=left>Recently Vasya became acquainted with an interesting movement in 
+mathematics and logic called "intuitionism". The main idea of this movement 
+consists in the rejection of the law of excluded middle (the logical law stating 
+that any assertion is either true or false). Vasya liked this idea; he says: 
+"Classical mathematics says that Fermat Last Theorem is either true or false; 
+but this statement is completely useless for me until I see the proof or a 
+contrary instance". So Vasya became a born-again intuitionist. He tries to use 
+the intuitionistic logic in all his activities and especially in his scientific 
+work. But this logic is much more di+cult than the classical one. Vasya often 
+tries to use logical formulae that are valid in classical logic but aren't so in 
+the intuitionistic one. <BR>Now he wants to write a program that will help him 
+to check the validity of his formulae automatically. He has found a book 
+describing how to do that but unfortunately he isn't good at programming, so 
+you'll have to help him. <BR>The construction starts from an arbitrary acyclic 
+oriented graph <B>X</B> = &lt;X, G&gt;. Then a partial order is constructed on 
+X, the set of vertices of <B>X</B>: for any x, y in X we define x &lt;= y iff 
+there exists a path (possibly of zero length) in <B>X</B> from x to y. Next, 
+consider the set B of all subsets of X and the set H in B consisting of all a in 
+X such that any two different x and y from R are incomparable (i.e. neither x 
+&lt;= y nor y &lt;= x). Note that H always contains the empty set and all 
+one-element subsets of X. Now it is possible to define a map Max : B -&gt; H in 
+B. For any M in X we put Max(M) = {x in M : not exists y in M : x &lt;&gt; y, x 
+&lt;= y} - the set of all maximal elements of M. <BR>Next we define several 
+operations on H. For any a,b in H put a =&gt; b = {x in b : not exists y in a : 
+x &lt;= y}, a /\ b = Max(a or b), a \/ b = Max({x in X: exists y in a, z in b: x 
+&lt;= y, x &lt;= z}), <B>0</B> = Max(X), <B>1</B> = empty set, not a = (a =&gt; 
+<B>0</B>), a == b = ((a =&gt; b) /\ (b =&gt; a)). <BR>Now consider logical 
+formulae consisting of the following symbols: <BR>&nbsp;&nbsp;* Constants 
+<B>1</B> and <B>0</B>; <BR>&nbsp;&nbsp;* Variables - capital letters from A to 
+Z; <BR>&nbsp;&nbsp;* Parentheses - if E is a formula, then (E) is another; 
+<BR>&nbsp;&nbsp;* Negation - not E is a formula for any formula E; 
+<BR>&nbsp;&nbsp;* Conjunction - E1 /\ E2 /\ ... /\ En. Note that the conjunction 
+is evaluated from left to right: E1 /\ E2 /\ E3 = (E1 /\ E2) /\ E3. 
+<BR>&nbsp;&nbsp;* Disjunction - E1 \/ E2 \/ ... \/ En. The same remark applies. 
+<BR>&nbsp;&nbsp;* Implication - E1 =&gt; E2. Unlike the previous two operations 
+it is evaluated from right to left: E1 =&gt; E2 =&gt; E3 means E1 =&gt; (E2 
+=&gt; E3). <BR>&nbsp;&nbsp;* Equivalence - E1 == E2 == ... == En. This 
+expression is equal to (E1 == E2) /\ (E2 == E3) /\ ... /\ (En-1 =&gt; En). 
+<BR>The operations are listed from the highest priority to the lowest. <BR>A 
+formula E is called valid (in the model defined by <B>X</B>) if after 
+substitution of arbitrary elements of H for the variables involved in E it 
+evaluates to <B>1</B>; otherwise it is called invalid. <BR>Your task is to 
+determine for a given graph <B>X</B>, which formulae from a given set are valid 
+and which invalid. </DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left>The first line contains two integers N and M separated by a 
+single space - the number of vertices (1 &lt;= N &lt;= 100) and edges (0 &lt;= M 
+&lt;= 5000) of <B>X</B>. The next M lines contain two integers si and ti each - 
+the beginning and the end of i-th edge respectively. The next line contains K (1 
+&lt;= K &lt;= 20) - the number of formulae to be processed. The following K 
+lines contain one formula each. A formula is represented by a string consisting 
+of tokens 0, 1, A, ..., Z, (, ), ~, &amp;, |, =&gt;, =. The last five tokens 
+stand for not, /\, \/, =&gt; and == respectively. Tokens can be separated by an 
+arbitrary number of spaces. No line will be longer than 254 characters. All 
+formulae in the file will be syntactically correct. Also you may assume that the 
+number D = |H| of elements of H doesn't exceed 100 and that Sum(Di) &lt;= 10^6. 
+</DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left>The output file must contain K lines - one line for each 
+formula. Write to the j-th line of output either valid or invalid. </DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>Sample input #1 <BR>1 0 <BR>6 <BR>1=0 <BR>X|~X <BR>A=&gt;B=&gt;C 
+= (A&amp;B)=&gt;C <BR>~~X =&gt; X <BR>X =&gt; ~~X <BR>(X =&gt; Y) = (Y | ~X) 
+<BR><BR>Sample input #2 <BR>6 6 <BR>1 2 <BR>2 3 <BR>2 4 <BR>3 5 <BR>4 5 <BR>5 6 
+<BR>11 <BR>1=0 <BR>X|~X <BR>A=&gt;B=&gt;C = (A&amp;B)=&gt;C <BR>~~X =&gt; X 
+<BR>X =&gt; ~~X <BR>(X =&gt; Y) = (Y | ~X) <BR>A&amp;(B|C) = A&amp;B|A&amp;C 
+<BR>(X=&gt;A)&amp;(Y=&gt;A) =&gt; X|Y=&gt;A <BR>X = ~~X <BR>~X=~~~X <BR>~X = (X 
+=&gt; 0) </DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>Sample output #1 <BR>invalid <BR>valid <BR>valid <BR>valid 
+<BR>valid <BR>valid <BR><BR>Sample output #2 <BR>invalid <BR>invalid <BR>valid 
+<BR>invalid <BR>valid <BR>invalid <BR>valid <BR>valid <BR>invalid <BR>valid 
+<BR>valid </DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR><B>Note</B></DIV>
+<DIV align=left><BR>You can download pdf version of this task <A 
+href="http://acm.sgu.ru/materials/p161.pdf">here</A> </DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=161">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=161">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Lopatin, Nikolay Durov </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>ACM ICPC 2002-2003 NEERC, Northern Subregion </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>November, 2002 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-13 20:18:09</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

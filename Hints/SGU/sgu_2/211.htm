@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=211 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="211.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>211. Strange Counter </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard<BR>output: standard</DIV><BR><BR><BR>
+<DIV align=left>The new secret counter invented in one theoretical computer 
+science lab is the great breakthrough in the computer microschemes design. This 
+counter consists of N registers numbered from 0 to N-1, each of which contains 
+0, 1 or 2. If the number in the i-th register is A<SUB>i</SUB>, the number 
+stored in the counter is <BR><BR>
+<CENTER><BR>A<SUB>N-1</SUB> * 2<SUP>N-1</SUP> + A<SUB>N-2</SUB> * 
+2<SUP>N-2</SUP> + ... + A<SUB>1</SUB> * 2 + A<SUB>0</SUB> 
+<BR></CENTER><BR><BR>One can see that the same number can be stored in the 
+counter in several different ways. For example, the number 5 can be stored in a 
+3-register counter as (1, 0, 1) or as (0, 2, 1). <BR><BR>The main feature of the 
+counter is that it can add numbers that are powers of two to the number stored 
+in the counter, only changing the value of a small number of registers. Namely, 
+the scientists of the lab developed the scheme that allowed adding such number 
+changing no more than four registers! <BR><BR>Unfortunately after the recent 
+experiments in the neighbouring physics lab, involving the creation of the 
+artificial black hole, the theoretical computer science laboratory was 
+accidently destroyed. However, the supercomputer project that the counter was 
+designed for is still on, so you were asked to reinvent the counter. <BR></DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left><BR>The first line of the input file contains N — the number of 
+registers in the counter (1 &#8804; N &#8804; 1 000). Initially all registers contain 
+zeroes. The second line contains M — the number of additions you have to make (1 
+&#8804; M &#8804; 10 000). The third line contains M integer numbers ranging from 0 to N-1. 
+Number i means that you must add 2<SUP>i</SUP> to the number in the counter. 
+There sum of all numbers added to the counter does not exceed 2<SUP>N</SUP> - 1. 
+<BR></DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left><BR>Output file must contain M lines. Each line must contain the 
+changes made adding the corresponding number to the counter. <BR><BR>The first 
+number in each line must be K — the number of registers changed (1 &#8804; K &#8804; 4). K 
+pairs must follow — for each changed register first output its number and then 
+the new value. <BR></DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>5 <BR>6 <BR>0 0 0 1 0 0 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>1 0 1 <BR>1 0 2 <BR>2 0 1 1 1 <BR>1 1 2 <BR>1 0 2 <BR>3 0 1 1 1 
+2 1 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=211">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=211">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Stankevich </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>Petrozavodsk Summer Trainings 2003 </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>2003-08-30 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-14 13:41:43</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

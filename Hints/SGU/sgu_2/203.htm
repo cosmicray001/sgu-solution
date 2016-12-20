@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=203 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="203.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>203. Hyperhuffman </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard<BR>output: standard</DIV><BR><BR><BR>
+<DIV align=left>You might have heard about Huffman encoding — that is the coding 
+system that minimizes the expected length of the text if the codes for 
+characters are required to consist of an integral number of bits. <BR><BR>Let us 
+recall codes assignment process in Huffman encoding. First the <EM>Huffman 
+tree</EM> is constructed. Let the alphabet consist of N characters, i-th of 
+which occurs P<SUB>i</SUB> times in the input text. Initially all characters are 
+considered to be active nodes of the future tree, i-th being marked with 
+P<SUB>i</SUB>. On each step take two active nodes with smallest marks, create 
+the new node, mark it with the sum of the considered nodes and make them the 
+children of the new node. Then remove the two nodes that now have parent from 
+the set of active nodes and make the new node active. This process is repeated 
+until only one active node exists, it is made the root of the tree. <BR><BR>Note 
+that the characters of the alphabet are represented by the leaves of the tree. 
+For each leaf node the length of its code in the Huffman encoding is the length 
+of the path from the root to the node. The code itself can be constrcuted the 
+following way: for each internal node consider two edges from it to its 
+children. Assign 0 to one of them and 1 to another. The code of the character is 
+then the sequence of 0s and 1s passed on the way from the root to the leaf node 
+representing this character. <BR><BR>In this problem you are asked to detect the 
+length of the text after it being encoded with Huffman method. Since the length 
+of the code for the character depends only on the number of occurences of this 
+character, the text itself is not given — only the number of occurences of each 
+character. Characters are given from most rare to most frequent. <BR><BR>Note 
+that the alphabet used for the text is quite huge — it may contain up to 500 000 
+characters. <BR><BR></DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left>The first line of the input file contains N — the number of 
+different characters used in the text (2 &#8804; N &#8804; 500,000). The second line 
+contains N integer numbers P<SUB>i</SUB> — the number of occurences of each 
+character (1 &#8804; P<SUB>i</SUB> &#8804; 10<SUP>9</SUP>, P<SUB>i</SUB> &#8804; P<SUB>i + 1</SUB> 
+for all valid i). <BR></DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left>Output the length of the text after encoding it using Huffman 
+method, in bits. <BR></DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>3 <BR>1 1 4 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>8 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=203">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=203">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Stankevich </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>Petrozavodsk Summer Trainings 2003 </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>2003-08-23 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-14 13:30:00</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

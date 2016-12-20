@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=214 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="214.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>214. Weird Dissimilarity </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard<BR>output: standard</DIV><BR><BR><BR>
+<DIV align=left>The issue of this problem is to find out how far two strings 
+over alphabet &#931; are, with respect to one weird definition of dissimilarity. For 
+any two characters c<SUB>1</SUB> and c<SUB>2</SUB> from &#931; consider 
+<EM>dissimilarity</EM> d(c<SUB>1</SUB>, c<SUB>2</SUB>) of c<SUB>1</SUB> from 
+c<SUB>2</SUB> — non-negative integer number. If we take two strings &#945; and beta 
+of equal length l, <EM>distance</EM> from &#945; to &#946; is dist(&#945;, &#946;) = sum(i=1..l, 
+d(&#945;[i], &#946;[i])). <BR><BR>You are given two strings &#955; and &#956;. Consider all possible 
+pairs of strings &#945; and &#946; of equal length over &#931;, such that &#955; is a subsequence of 
+&#945; and &#956; is a subsequence of &#946; (string &#969; of length n is a subsequence of a string 
+&#958; of length m if there exist 1 &#8804; i<SUB>1</SUB> &lt; i<SUB>2</SUB> &lt; ... &lt; 
+i_n &#8804; m such that &#969;[j] = &#958;[i<SUB>j</SUB>] for all 1 &#8804; j &#8804; n). Choose among them 
+&#945;' and &#946;' such that dist(&#945;', &#946;') is minimal possible. <EM>Dissimilarity</EM> of 
+&#955; from &#956; is defined as D(&#955;, &#956;) = dist(&#945;', &#946;'). <BR><BR>Your task is to find the 
+dissimilarity of &#955; from &#956; and to provide &#945;' and &#946;' such that D(&#955;, &#956;) = dist(&#945;', 
+&#946;'). <BR></DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left><BR>The first line of the input file contains &#931; — several 
+different characters that form the alphabet for the strings we consider (1 &#8804; |&#931;| 
+&#8804; 200, all characters have ASCII code greater than space). Next two lines 
+contain &#955; and &#956; respectively. Length of each of the given strings does not 
+exceed 2000. Next |&#931;| lines contain |&#931;| non-negative integer numbers each, j-th 
+number of i-th line contains dissimilarity of i-th character from j-th. 
+<BR></DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left><BR>On the first line of the output file print D(&#955;, &#956;). On the 
+second and third lines of the output file print &#945;' and &#946;', such that D(&#955;, &#956;) = 
+dist(&#945;', &#946;'), &#955; is a subsequence of &#945;' and &#956; is a subsequence of &#946;'. Length of 
+each of &#945;' and &#946;' must not exceed 4000. <BR></DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>ab <BR>ab <BR>ba <BR>2 1 <BR>4 1 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>4 <BR>aba <BR>bba <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=214">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=214">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Stankevich </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>Petrozavodsk Summer Trainings 2003 </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>2003-08-30 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-14 17:04:08</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

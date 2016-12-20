@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=201 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="201.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>201. Non Absorbing DFA </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard<BR>output: standard</DIV><BR><BR><BR>
+<DIV align=left>In the theory of compilers and languages <EM>finite state 
+machines</EM>, also known as <EM>finite automata</EM> are widely used. 
+Deterministic finite automation (DFA) is an ordered set &lt;&#931;, U, s, T, &#966;&gt; 
+where &#931; is the finite set called <EM>input alphabet</EM>, U is the finite set of 
+<EM>states</EM>, s from U is the <EM>initial state</EM>, T subset of U is the 
+set of <EM>terminal states</EM> and &#966; : U &#215; &#931; &#8594; U is the <EM>transition 
+function</EM>. <BR><BR>The input of the automation is the string &#945; over &#931;. 
+Initially the automation is in state s. Each step it reads the first character c 
+of the input string and changes its state to &#966;(u, c) where u is the current 
+state. After that the first character of the input string is removed and the 
+step repeats. If when its input string is empty the automation is in the 
+terminal state, it is said that it <EM>accepts</EM> the initial string &#945;, in the 
+other case it <EM>rejects</EM> it. <BR><BR>In some cases to simplify the 
+automation the concept of <EM>nonabsorbing edges</EM> is introduced. That is, in 
+addition to &#966; the function &#967; : U &#215; &#931; &#8594; {0, 1} is introduced and when making a 
+transition from some state u with some character c, the leading character is 
+removed from the input string only if &#967;(u, c) = 0. If &#967;(u, c) = 1, the input 
+string is kept intact and next transition is performed with the new state and 
+the same character. <BR><BR>It is said that such automation accepts some string 
+&#945; if after a number of steps it transits to the terminal state and the input 
+string becomes empty. <BR><BR>Your task is given the DFA with nonabsorbing edges 
+to compute the number of strings of the given length N that it accepts. 
+<BR></DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left><BR>The first line of the input file contains &#931; — a subset of 
+the English alphabet, several different small letters. Next line contains K = | 
+U | — the number of states of the automation (1 &#8804; K &#8804; 1000). Let states be 
+numbered from 1 to K. Next line contains S (1 &#8804; S &#8804; K) — the initial state, 
+followed by L = | T | — the number of terminal states and then L different 
+integer numbers ranging from 1 to K — the numbers of terminal states. 
+<BR><BR>Next K lines contain | &#931; | integer numbers each and define &#966;. Next K 
+lines define &#967; in a similar way. The last line of the input file contains N (1 &#8804; 
+N &#8804; 60). <BR></DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left><BR>Output the only number — the number of different strings of 
+length N over &#931; that the given DFA accepts. <BR><BR>In the given example the two 
+strings accepted by the automation are ``aaa'' and ``abb''. <BR></DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>ab <BR>2 <BR>1 1 2 <BR>2 1 <BR>1 2 <BR>0 1 <BR>0 0 <BR>3 
+<BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>2 <BR><BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=201">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=201">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Stankevich </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>Petrozavodsk Summer Trainings 2003 </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>2003-08-23 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-14 13:24:35</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

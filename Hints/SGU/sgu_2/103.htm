@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=103 -->
+<HTML><HEAD><TITLE>103. Traffic Lights</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META http-equiv=Expires content=Дата>
+<META http-equiv=Cache-Control content=no-cache>
+<META http-equiv=pragma content=no-cache>
+<META 
+content="ACM, programming contest, programming, contest, informatics, ioi, saratov, ICPC, программирование, информатика, алгоритм, саратов, контест" 
+name=keywords>
+<META 
+content="That site consists of some amount of programming problems. Online Contester system check your solution right now. You can participate in programming contests. Train your programming skills." 
+name=description><LINK href="style.css" type=text/css rel=stylesheet>
+<STYLE type=text/css>TD {
+	FONT-SIZE: 9pt
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY>
+<TABLE width="95%">
+  <TBODY>
+  <TR>
+    <TD>
+      <H3><B>
+      <P align=center>103. Traffic Lights </P></H3></B>
+      <P align=center>Time Limit: 0.25 sec, Memory Limit: 1 MB </P>
+      <P align=justify></P>
+      <P align=justify>
+      <P>PROBLEM</P></B></FONT><FONT size=3>
+      <P align=justify>In the city of Dingilville the traffic is arranged in an 
+      unusual way. There are roads junctions and junctions roads connecting the 
+      roadsjunctions. There is at most one road between any two different 
+      junctions. There is no road connecting a junction to itself. Travel time 
+      for a road is the same for both directions. The speed of all vehicles on 
+      the roads is the same. At every junction there is a single traffic light 
+      that is either blue or purple at any moment. The color of each light 
+      alternates regularly with timeperiodically: blue for a certain period 
+      duration and then purple for another certain periodduration. Traffic is 
+      permitted to travel down the road between between any two junctions, if 
+      and only if the lights at <U>both junctions</U> are the same color at the 
+      moment of leaving departing from one the source junctions. for the other. 
+      If a vehicle arrives at a junction just at the moment the lights switch it 
+      must consider the new colors of lights. VThe vehicles are allowed to wait 
+      at the junctions. You are given the city map which shows<U> </P>
+      <UL></U>
+        <P align=justify>
+        <LI>the travel times for all roads (integers), roads between the 
+        junctions, 
+        <P></P>
+        <P align=justify></P>
+        <LI>the periods durations for of the two colors at each junction 
+        (integers), 
+        <P></P></LI></UL>
+      <UL>
+        <P align=justify>
+        <LI>and the the initial configuration statecolor of the light and the 
+        remaining time (integer) for this color to change s at each junction. . 
+        The configuration of a junction at a moment which consists of the color 
+        of the light at the junction and the remaining time for this color 
+        within the current period. 
+        <P></P></LI></UL>
+      <P align=justify>The initial configuration at each junction determines the 
+      situation at the moment the city traffic starts. </P>
+      <P align=justify>Your task is are requested to find a path which takes the 
+      minimum time from a given source junction to a given between two 
+      givendestination junctions for a vehicle when the traffic starts. In case 
+      more than one such path exists you are required to report only one of 
+      them.</P></FONT><B><FONT face=Tahoma size=3>
+      <P>ASSUMPTIONS</P></B></FONT><FONT size=3>
+      <UL>
+        <P align=justify>
+        <LI>2 </FONT><FONT face=Symbol size=3>Ј</FONT><FONT size=3> <I>N 
+        </I></FONT><FONT face=Symbol size=3>Ј </FONT><FONT size=3>300 where 
+        <I>N</I> is designates the number of junctions. The junctions are 
+        identified with numbersby numbersintegers 1 through <I>N</I> 
+        consecutively. These numbers are called id-numbers.
+        <P></P>
+        <P align=justify></P>
+        <LI>1 </FONT><FONT face=Symbol size=3>Ј </FONT><I><FONT size=3>M 
+        </I></FONT><FONT face=Symbol size=3>Ј </FONT><FONT size=3>14,000 where 
+        <I>M</I> designates is the number of roads.
+        <P></P>
+        <P align=justify></P>
+        <LI>1 <FONT face=Symbol>&#163;</FONT> <I>l<SUB>ij</SUB> <FONT 
+        face=Symbol>&#163;</FONT> </I>100 where <I>l<SUB>ij</I></SUB> is the time 
+        required to move from junction <I>i</I> to <I>j </I>using the road that 
+        connects <I>i</I> and <I>j</I>.<I>. 
+        <P></P></I>
+        <P align=justify></P>
+        <LI>1 <FONT face=Symbol>&#163;</FONT> <I>t<SUB>ic</SUB> <FONT 
+        face=Symbol>&#163;</FONT> </I>100 where <I>t<SUB>ic</SUB> </I>is the period 
+        duration of the color <I>c</I> for the light at the junction <I>i</I>. 
+        The index <I>c </I>is either<I> B </I>for<I> blue </I>or<I> P </I>for<I> 
+        purple.
+        <P></P></I>
+        <P align=justify></P>
+        <LI>1 <FONT face=Symbol>&#163;</FONT> <I>r<SUB>ic</SUB> <FONT 
+        face=Symbol>&#163;</FONT> </I><I>t<SUB>ic </I></SUB>where 
+        <I>r<SUB>ic</I></SUB> is the remaining time for the initial color 
+        <I>c</I> at junction <I>i</I>.
+        <P></P></LI></UL></FONT>
+      <P></P>
+      <P align=justify></P><FONT face=Arial size=3><B>
+      <P align=justify>Input</P></B>
+      <P align=justify>
+      <UL></UL>
+      <UL>
+        <P align=justify>
+        <LI>The first line contains two numbers: The id-numbers of the source 
+        junction and the id-number of the destination junction, separated by a 
+        blank. 
+        <P></P>
+        <P align=justify></P>
+        <LI>The next second input line contains two numbers: The number of 
+        junctions, designated by <I>N</I>, and the number of roads, designated 
+        by <I>M</I>, <I>M</I>, separated by a blank. 
+        <P></P>
+        <P align=justify></P>
+        <LI>The following <I>N</I> lines <U></U>contain information on <I>N</I> 
+        junctions, each having the form. The (<I>i+</I>2)’th<I> </I>line of the 
+        input file holds information about the junction <I>i</I> : initial 
+        color: <I>C<SUB>i</I> </SUB>of <I>C<SUB>i</I>,</SUB> , 
+        <I>r<SUB>ic</I></SUB> the junction, remaining time for color 
+        <I>C<SUB>i</I></SUB>, the time period , <I>t<SUB>i,B</I></SUB> for 
+        blue<I>t<SUB>iB</I></SUB>, and time period 
+        <I>t<SUB>i,P</SUB>t<SUB>iP</I></SUB> for purple, all separated by 
+        blanks. where <I>C<SUB>i</I> </SUB>is either ‘</FONT><FONT face=Courier 
+        size=3>B</FONT><I><FONT size=3>’</I> or ‘</FONT><FONT face=Courier 
+        size=3>P</FONT><I><FONT size=3>’</I>, indicating the initial color of 
+        the light at the junction <I>i. 
+        <P></P></I>
+        <P align=justify></P>
+        <LI>Finally, the next <I>M</I> lines contain information on <I>M</I> 
+        roads. Each line is of the form: id-number (N<SUB>i</SUB>) of the source 
+        junction, id-number (N<SUB>j</SUB>) of the destination junction, and 
+        time required to travel the path that connects N<SUB>i</SUB> and 
+        N<SUB>j</SUB>, which are all separated by blanksi</I>, <I>j, l<SUB>ij 
+        </SUB></I>where <I>i</I> and <I>j</I> are the id-numbers of the 
+        junctions which are connected by this road<I> </I>. 
+        <P></P></LI></UL><B>
+      <P>&nbsp;</P></FONT><FONT face=Tahoma size=3>
+      <P></P>
+      <P align=justify></P></B><B>
+      <P align=justify>Output</P></B>
+      <P align=justify>
+      <P>If a <B>path exists:</B>.</P>
+      <UL>
+        <P align=justify>
+        <LI>The first line must will contain the time taken by a minimum-time 
+        path from the source the input source junction and to the destination 
+        junction provided such a path exists. 
+        <P></P>
+        <P align=justify></P>
+        <LI>Then, the second line: of output must will contain the list of 
+        junctions that construct the minimum-time path you have found. You have 
+        to write the junctions to the output file in the order of 
+        travelling.occurrence on the path. Therefore the first integer in this 
+        line is expected tomust be must designate the id-number of the source 
+        source junction, the second the junction visited from the first one, so 
+        on, and finally, the last integer on the second line must represent the 
+        and the last one the id-number of the destination junction.
+        <P></P></LI></UL>
+      <P align=justify>If a <B>path does not exist:</P>
+      <UL></B>
+        <P align=justify>
+        <LI>In case a solution does not exist, the output must consist of a 
+        single line containing only the integer </FONT><FONT face=Courier 
+        size=3>0</FONT><FONT size=3>. 
+        <P></P></LI></UL>
+      <P></P>
+      <P align=justify></P>
+      <P align=justify>Sample Input</P><FONT face="Courier New"><PRE>1 4
+4 5
+B 2 16 99
+P 6 32 13
+P 2 87 4
+P 38 96 49
+1 2 4
+1 3 40
+2 3 75
+2 4 76
+3 4 77
+</PRE>
+      <P align=justify></P></FONT>
+      <P align=justify>Sample Output</P><FONT face="Courier New"><PRE>127
+1 2 4
+</PRE></FONT></FONT></TD></TR></TBODY></TABLE></BODY></HTML>

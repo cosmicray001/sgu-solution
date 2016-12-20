@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=156 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="156.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>156. Strange Graph </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard input<BR>output: standard 
+output</DIV><BR><BR><BR>
+<DIV align=left>Let us consider an undirected graph G = &lt;V, E&gt;. We say 
+that two vertices u and v are neighbours if (u, v) in E. In this case we also 
+say that u is a neighbour of v and v is a neighbour of u. Let us denote by N(v) 
+the set of neighbours of v. Recall that the number of neighbours of v is called 
+the degree of this vertex and is denoted by deg v. <BR>We call graph G strange 
+if it is connected and for its every vertex v the following conditions are 
+satisfied: <BR>&nbsp;&nbsp;1. deg v &gt;= 2 (i.e. there are at least two 
+neighbours of v) <BR>&nbsp;&nbsp;2. if deg v = 2 then the two neighbours of v 
+are not connected by an edge <BR>&nbsp;&nbsp;3. if deg v &gt; 2 then there 
+exists u in N(v), such that the following is true: 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;(a) deg u = 2 <BR>&nbsp;&nbsp;&nbsp;&nbsp;(b) any 
+two diRerent vertices w1, w2 in N(v) \ {u} are neighbours, i.e. (w1,w2) in E 
+<BR>You are given some strange graph G. Find a hamiltonian cycle in it, i.e. a 
+cycle that goes through every vertex of G exactly once. </DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left>The first line of the input file contains two integer numbers N 
+and M - the number of vertices and edges in G respectively (3 &lt;= N &lt;= 
+10000, M &lt;= 100000). 2M integer numbers follow - each pair represents 
+vertices connected by the corresponding edge (vertices are numbered from 1 to 
+N). It is guaranteed that each edge occurs exactly once in the input file and 
+that there are no loops (i.e. ends of each edge are distinct). </DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left>If there is no hamiltonian cycle in G, print -1 in the first 
+line of the output file. In the other case output N numbers - the sequence of 
+vertices of G as they appear in the hamiltonian cycle found (note that the last 
+vertex must be connected to the first one). If there are several solutions, 
+output any one. <BR></DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>Sample input #1 <BR>4 4 <BR>1 2 2 3 3 4 4 1 <BR><BR>Sample input 
+#2 <BR>9 12 <BR>1 2 2 3 3 1 1 4 2 5 3 6 <BR>4 7 5 8 6 9 7 8 8 9 9 7 </DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>Sample output #1 <BR>1 2 3 4 <BR><BR>Sample output #2 <BR>-1 
+</DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR><B>Note</B></DIV>
+<DIV align=left><BR>You can download pdf version of this task <A 
+href="http://acm.sgu.ru/materials/p156.pdf">here</A> </DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=156">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=156">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Stankevich </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>ACM ICPC 2002-2003 NEERC, Northern Subregion </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>November, 2002 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-13 20:05:17</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

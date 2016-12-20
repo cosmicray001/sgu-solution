@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=173 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="173.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>173. Coins </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 1024 
+KB</DIV>
+<DIV align=center>input: standard<BR>output: standard</DIV><BR><BR><BR>
+<DIV align=left>There is a row consist of N coins. Each coin lies heads up or 
+tails up. There is also binary vector A with (K-1) dimensions. <BR>We accomplish 
+M operations with our coins row: we select some consecutive K coins, and apply 
+to selected coins transformation X for Di times (i=1..M, where i is a number of 
+operation) <BR>The transformation X for given row C with length K means: <BR>1. 
+We shift the row C in one position to the left in a cyclic way. <BR>2. Then we 
+scan the row C from the first (leftmost) coin to (K-1)-th coin: if coin Ci lies 
+tails up, and Ai=1, then we turn over coin Ck <BR>Obviously, that for constant 
+coins row with length K transformation X is fully determined by vector A. But 
+vector A haven't given to you. You have results of transformation L rows with 
+length K (row of coins before transformation, and row after transformation). It 
+is guarantied that there is exactly one vector A satisfied all L conditions. 
+<BR>Your task is to reconstruct initial row by given row after all operations 
+being accomplished. </DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left>There is four integer numbers in the first line of input: N, M, 
+K, L (2&lt;=N&lt;=50, 1&lt;=M&lt;=10, 1&lt;=L&lt;=200, 2&lt;=K&lt;=N). 
+<BR>Second line contains description of accomplished operations, M pairs of 
+positive integer numbers Si and Di. Si is a starting point of selected coins 
+subrow, Di is a number of iterations of transformation (Si &lt;= N-K+1; Di &lt;= 
+10^6). <BR>There are the following L conditions determining transformation X, L 
+blocks by two lines each: first line of each block contains a row before 
+transformation, and the second line contains row after transformation. Each line 
+consists of K symbols, 1 denotes tails, 0 denotes heads. <BR>The last line 
+contains N symbols - row of coins after all operations accomplished. i-th symbol 
+is 1 if i-th coin lies tails up, and 0 otherwise. </DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left>Write N symbols in single line of output: i-th symbol must be 1 
+if i-th coin of initial row laid tails up, and 0 otherwise. </DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>4 2 3 2 <BR>2 1 1 1 <BR>010 <BR>101 <BR>101 <BR>011 <BR>1010 
+</DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>0110 </DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=173">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=173">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Dmitry Orlov </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>Saratov ST team Spring Contest #1 </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>18.05.2003 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-13 20:59:58</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

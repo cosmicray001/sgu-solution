@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=157 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="157.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>157. Patience </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard input<BR>output: standard 
+output</DIV><BR><BR><BR>
+<DIV align=left>Sasha enjoys playing patiences. Last days he played one very 
+interesting patience on a rectangular grid 14x4. The rules of this patience are 
+very simple. He takes a standard 52-card deck (without jokers), extracts all 
+aces and lays them in the first column of the grid. Cell (1, 1) contains ace of 
+diamonds, (1, 2) - ace of hearts, (1, 3) - ace of clubs and (1, 4) contains ace 
+of spades. Then Sasha shuffles the rest of the deck and lays remaining cards to 
+the grid row by row leaving column 2 empty, so all the columns from 3 to 14 are 
+covered by cards. <BR>After having laid all cards in such a manner, he is 
+allowed to make moves. The move is determined by selection of an empty cell. 
+This empty cell is to be covered by the card defined by the contents of the left 
+adjacent cell. The covering card must have the same suit and the next higher 
+value (order of values is: Ace 2 3 4 5 6 7 8 9 10 Jack Queen King). For example, 
+if the cell (6, 3) contains the Queen of Spades, and the cell (7, 3) is empty, 
+selecting cell (7, 3) will move the King of Spades to (7, 3) (and leave empty 
+the cell where the King of Spades was before the move). If the left neighbour of 
+the empty cell contains a King or is empty, the move selecting this empty cell 
+is disabled. <BR>The goal is to make each row ordered (i.e. columns from 1 to 13 
+must contain cards from Ace to King in the order described above, and the column 
+14 must be empty). If all empty cells follow Kings or empty cells, and the cards 
+are not ordered, Sasha is declared a loser (in the classic version of this 
+patience, the rest of the deck may be shuffled two times again leaving ordered 
+cards on their positions, however Sasha is very experienced and often wins 
+without additional shuffling). <BR>Now Sasha wants to know some things about 
+this patience. Imagine the position where three suits are already ordered, and 
+the remaining suit is ordered partially. It is known that there are less than n 
+highest cards that are not ordered. So only n rightmost columns may contain 
+unordered cards. For example, if n = 3, columns from 1 to 11 are ordered, and 
+columns from 12 to 14 contain Queen, King and empty cell in an arbitrary order. 
+Sasha wants to determine how many of such positions for a given n have a winning 
+strategy. For example, if n = 3, there is exactly one position that does not 
+allow him to win: ... [King] [empty] [Queen]. All other positions have a winning 
+strategy: <BR>&nbsp;&nbsp;1. ... [Queen] [King] [empty] is already a goal 
+position <BR>&nbsp;&nbsp;2. ... [Queen] [empty] [King] allows to move King 
+adjacent to the Queen. <BR>&nbsp;&nbsp;3. ... [empty] [Queen] [King] becomes 
+previous position after moving the Queen after the Jack. <BR>&nbsp;&nbsp;4. ... 
+[empty] [King] [Queen] becomes goal position by moving the Queen after the Jack. 
+<BR>&nbsp;&nbsp;5. ... [King] [Queen] [empty] becomes position 3 after moving 
+the King to the empty cell. <BR>So for n = 3 the answer is 5. <BR>Write a 
+program that will get the answer for an arbitrary n from 1 to 13. </DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left>Input file consists of only one integer number n. </DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left>Output the number of positions with less than n highest cards 
+not ordered in the remaining suit that have a winning strategy. </DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>Sample input #1 <BR>3 <BR><BR>Sample input #2 <BR>4 </DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>Sample output #1 <BR>5 <BR><BR>Sample output #2 <BR>14 </DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR><B>Note</B></DIV>
+<DIV align=left><BR>You can download pdf version of this task <A 
+href="http://acm.sgu.ru/materials/p157.pdf">here</A> </DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=157">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=157">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Lopatin </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>ACM ICPC 2002-2003 NEERC, Northern Subregion </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>November, 2002 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-13 20:07:03</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

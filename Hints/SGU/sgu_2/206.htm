@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://acm.sgu.ru/problem.php?contest=0&problem=206 -->
+<HTML><HEAD><TITLE>Saratov State University :: Online Contester</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content=??? name=keywords>
+<META content=??? name=description><LINK href="206.files/style-800.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY style="FONT-SIZE: 9pt" text=#000000 vLink=#336699 aLink=#336699 
+link=#336699 bgColor=#f3f6f9>
+<DIV align=center>
+<DIV align=center>
+<H4>206. Roads </H4></DIV>
+<DIV align=center>time limit per test: 2 sec.<BR>memory limit per test: 65536 
+KB</DIV>
+<DIV align=center>input: standard<BR>output: standard</DIV><BR><BR><BR>
+<DIV align=left>The kingdom of Farland has N cities connected by M roads. Some 
+roads are paved with stones, others are just country roads. Since paving the 
+road is quite expensive, the roads to be paved were chosen in such a way that 
+for any two cities there is exactly one way to get from one city to another 
+passing only the stoned roads. <BR><BR>The kingdom has a very strong bureaucracy 
+so each road has its own ordinal number ranging from 1 to M: the stoned roads 
+have numbers from 1 to N-1 and other roads have numbers from N to M. Each road 
+requires some money for support, i-th road requires c<SUB>i</SUB> coins per year 
+to keep it intact. Recently the king has decided to save some money and keep 
+financing only some roads. Since he wants his people to be able to get from any 
+city to any other, he decided to keep supporting some roads in such a way, that 
+there is still a path between any two cities. <BR><BR>It might seem to you that 
+keeping the stoned roads would be the good idea, however the king did not think 
+so. Since he did not like to travel, he did not know the difference between 
+traveling by a stoned road and travelling by a muddy road. Thus he ordered you 
+to bring him the costs of maintaining the roads so that he could order his 
+wizard to choose the roads to keep in such a way that the total cost of 
+maintaining them would be minimal. <BR><BR>Being the minister of communications 
+of Farland, you want to help your people to keep the stoned roads. To do this 
+you want to fake the costs of maintaining the roads in your report to the king. 
+That is, you want to provide for each road the fake cost of its maintaining 
+d<SUB>i</SUB> in such a way, that stoned roads form the set of roads the king 
+would keep. However, to lower the chance of being caught, you want the value of 
+sum(i = 1..M, |c<SUB>i</SUB>-d<SUB>i</SUB>|) to be as small as possible. 
+<BR><BR>You know that the king's wizard is not a complete fool, so if there is 
+the way to choose the minimal set of roads to be the set of the stoned roads, he 
+would do it, so ties are allowed. <BR></DIV>
+<DIV align=left><BR><B>Input</B></DIV>
+<DIV align=left>The first line of the input file contains N and M (2 &#8804; N &#8804; 60, 
+N-1 &#8804; M &#8804; 400). Next M lines contain three integer numbers a<SUB>i</SUB>, 
+b<SUB>i</SUB> and c<SUB>i</SUB> each — the numbers of the cities the road 
+connects (1 &#8804; a<SUB>i</SUB> &#8804; N, 1 &#8804; b<SUB>i</SUB> &#8804; N, a<SUB>i</SUB> &#8800; 
+b<SUB>i</SUB>) and the cost of maintaining it (1 &#8804; c<SUB>i</SUB> &#8804; 10 000). 
+<BR></DIV>
+<DIV align=left><BR><B>Output</B></DIV>
+<DIV align=left>Output M lines — for each road output d<SUB>i</SUB> that should 
+be reported to be its maintainance cost so that he king would choose first N-1 
+roads to be the roads to keep and the specified sum is minimal possible. 
+<BR></DIV>
+<DIV align=left><BR><B>Sample test(s)</B></DIV>
+<DIV align=left><BR>Input</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>4 5 <BR>4 1 7 <BR>2 1 5 <BR>3 4 4 <BR>4 2 5 <BR>1 3 1 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left><BR>Output</DIV>
+<DIV align=left><FONT face="Courier New"></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left>4 <BR>5 <BR>4 <BR>5 <BR>4 <BR></DIV>
+<DIV align=left><PRE></PRE></DIV>
+<DIV align=left></FONT></DIV>
+<DIV align=left>
+<DIV align=right><A href="http://acm.sgu.ru/submit.php?problem=206">[submit]</A> 
+</DIV></DIV>
+<DIV align=left>
+<DIV align=right><A 
+href="http://acm.sgu.ru/forum.php?contest=0&amp;problem=206">[forum]</A> 
+</DIV></DIV>
+<DIV align=left>
+<HR>
+</DIV>
+<TABLE cellSpacing=7 align=left>
+  <TBODY>
+  <TR>
+    <TD>Author:</TD>
+    <TD>Andrew Stankevich </TD></TR>
+  <TR>
+    <TD>Resource:</TD>
+    <TD>Petrozavodsk Summer Trainings 2003 </TD></TR>
+  <TR>
+    <TD>Date:</TD>
+    <TD>2003-08-23 
+</TD></TR></TBODY></TABLE><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<TABLE class=tb cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 width="100%">
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR style="BACKGROUND-COLOR: #ffffff">
+                <TD align=left>Server time: 2004-01-14 13:34:06</TD>
+                <TD align=right><A href="mailto:acm@cs.sgu.ru" 
+                  target=_top>Online Contester</A> Team © 2002 - 2003. All 
+                  rights 
+  reserved.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>
