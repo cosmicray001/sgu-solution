@@ -3,6 +3,8 @@
  * Author:  Hangchen Yu
  * Date  :  01/16/2015
  */
+// https://github.com/yuhc/sgu-solution
+
 #include <cstdio>
 #include <cstring>
 
